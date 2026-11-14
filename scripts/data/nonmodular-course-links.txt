@@ -1,0 +1,188 @@
+# Format: DEPT_NO|LEVEL|COURSE NAME|URL
+1|6|AGRICULTURAL ENGINEERING LEVEL 6|https://easytvet.com/2/1/ae6/
+1|6|AGRICULTURAL EXTENSION LEVEL 6|https://easytvet.com/2/1/agrex6/
+1|6|AGRIPRENEURSHIP LEVEL 6|https://easytvet.com/2/1/agrip6/
+1|6|AQUACULTURE MANAGEMENT LEVEL 6|https://easytvet.com/2/1/aq6/
+1|6|DAIRY FARM MANAGEMENT LEVEL 6|https://easytvet.com/2/1/dfm6/
+1|6|HORTICULTURAL CROPS PRODUCTION LEVEL 6|https://easytvet.com/2/1/hcrop6/
+1|6|HORTICULTURE NURSERY MANAGEMENT LEVEL 6|https://easytvet.com/2/1/hnm6/
+1|6|HORTICULTURE PRODUCTION LEVEL 6|https://easytvet.com/2/1/hp6/
+1|5|AGRICULTURAL EXTENSION LEVEL 5|https://easytvet.com/2/1/agrex5/
+1|5|AGRICULTURAL MACHINERY & EQUIPMENT MECHATRONICS LEVEL 5|https://easytvet.com/2/1/agrim5/
+1|5|AGRIPRENEURSHIP LEVEL 5|https://easytvet.com/2/1/agrip5/
+1|5|AQUACULTURE MANAGEMENT LEVEL 5|https://easytvet.com/2/1/aq5/
+1|5|DAIRY FARM MANAGEMENT LEVEL 5|https://easytvet.com/2/1/dfm5/
+1|5|DAIRY PLANT MANAGEMENT LEVEL 5|https://easytvet.com/2/1/dpm5/
+1|5|HORTICULTURE NURSERY MANAGEMENT LEVEL 5|https://easytvet.com/2/1/hnm5/
+1|5|HORTICULTURE PRODUCTION LEVEL 5|https://easytvet.com/2/1/hcp5/
+1|5|SUSTAINABLE AGRICULTURE FOR RURAL DEVELOPMENT LEVEL 5|https://easytvet.com/2/1/sard5/
+1|4|AGRICULTURAL EXTENSION LEVEL 4|https://easytvet.com/2/1/agrex4/
+1|4|AGRICULTURAL MACHINERY AND EQUIPMENT LEVEL 4|https://easytvet.com/2/1/agrim4/
+1|4|AGRIPRENEURSHIP LEVEL 4|https://easytvet.com/2/1/agrip4/
+1|4|AQUACULTURE TECHNICIAN LEVEL 4|https://easytvet.com/2/1/aq4/
+1|4|DAIRY FARM MANAGER LEVEL 4|https://easytvet.com/2/1/dfm4/
+1|4|DAIRY PROCESSING LEVEL 4|https://easytvet.com/2/1/dp4/
+1|4|HORTICULTURE NURSERY MANAGEMENT LEVEL 4|https://easytvet.com/2/1/hnm4/
+1|4|HORTICULTURE PRODUCTION LEVEL 4|https://easytvet.com/2/1/hp4/
+1|3|DAIRY FARM MANAGER LEVEL 3|https://easytvet.com/2/1/dfm3/
+1|3|HORTICULTURAL CROPS PRODUCER LEVEL 3|https://easytvet.com/2/1/hcp3/
+2|6|ANALYTICAL CHEMISTRY LEVEL 6|https://easytvet.com/2/2/ach6/
+2|6|APPLIED BIOLOGY LEVEL 6|https://easytvet.com/2/2/a-bio6/
+2|6|APPLIED STATISTICS TECHNICIAN LEVEL 6|https://easytvet.com/2/2/as6/
+2|6|CHEMICAL ENGINEERING TECHNICIAN LEVEL 6|https://easytvet.com/2/2/cet6/
+2|6|ENVIRONMENTAL MANAGER LEVEL 6|https://easytvet.com/2/2/esci6/
+2|6|LIBRARY AND INFORMATION SCIENCE LEVEL 6|https://easytvet.com/2/2/lib6/
+2|6|MEDICAL ENGINEERING TECHNOLOGIST LEVEL 6|https://easytvet.com/2/2/meng6/
+2|5|ENVIRONMENTAL MANAGEMENT LEVEL 5|https://easytvet.com/2/2/emgnt6/
+2|5|LIBRARY AND INFORMATION SCIENCE LEVEL 5|https://easytvet.com/2/2/lib5/
+2|5|MEDICAL ENGINEERING LEVEL 5|https://easytvet.com/2/2/meng5/
+3|6|ARCHITECTURAL TECHNOLOGY LEVEL 6|https://easytvet.com/2/3/arc6/
+3|6|BUILDING TECHNOLOGY LEVEL 6|https://easytvet.com/2/3/bt6/
+3|6|CIVIL ENGINEERING LEVEL 6|https://easytvet.com/2/3/civilengt6/
+3|6|INTERIOR DESIGN LEVEL 6|https://easytvet.com/2/3/id6/
+3|6|LAND SURVEYING LEVEL 6|https://easytvet.com/2/3/lsurvey6/
+3|6|QUANTITY SURVEYING LEVEL 6|https://easytvet.com/2/3/qs6/
+3|5|ARCHITECTURAL DRAFTSMANSHIP LEVEL 5|https://easytvet.com/2/3/arc5/
+3|5|BUILDING TECHNOLOGY LEVEL 5|https://easytvet.com/2/3/bt5/
+3|5|CARPENTRY AND JOINERY LEVEL 5|https://easytvet.com/2/3/c5/
+3|5|INTERIOR DESIGN LEVEL 5|https://easytvet.com/2/3/id5/
+3|5|LAND SURVEY AND MAPPING LEVEL 5|https://easytvet.com/2/3/lsurvey5/
+3|5|PLUMBING LEVEL 5|https://easytvet.com/2/3/p5/
+3|4|BUILDING ARTISAN (MASONRY) LEVEL 4|https://easytvet.com/2/3/bt4/
+3|4|CARPENTERY AND JOINERY LEVEL 4|https://easytvet.com/2/3/cja4/
+3|4|CARPENTRY AND JOINERY LEVEL 4|https://easytvet.com/2/3/c4/
+3|4|CONSTRUCTION SURVEY LEVEL 4|https://easytvet.com/2/3/consvy4/
+3|4|INTERIOR DESIGN LEVEL 4|https://easytvet.com/2/3/id4/
+3|4|MASONRY LEVEL 4|https://easytvet.com/2/3/m4/
+3|4|PLUMBING LEVEL 4|https://easytvet.com/2/3/p4/
+3|3|PLUMBING LEVEL 3|https://easytvet.com/2/3/p3/
+4|6|ACCOUNTANT LEVEL 6|https://easytvet.com/2/4/ac6/
+4|6|BANKING AND FINANCE OFFICER LEVEL 6|https://easytvet.com/2/4/bf6/
+4|6|BUSINESS MANAGER LEVEL 6|https://easytvet.com/2/4/bm6/
+4|6|HUMAN RESOURCE MANAGEMENT LEVEL 6|https://easytvet.com/2/4/hr6/
+4|6|OFFICE ADMINISTRATOR LEVEL 6|https://easytvet.com/2/4/oa6/
+4|6|PROJECT MANAGEMENT LEVEL 6|https://easytvet.com/2/4/pm6/
+4|6|SUPPLY CHAIN MANAGER LEVEL 6|https://easytvet.com/2/4/sc6/
+4|5|BUSINESS MANAGEMENT LEVEL 5|https://easytvet.com/2/4/bm5/
+4|5|HUMAN RESOURCE MANAGEMENT LEVEL 5|https://easytvet.com/2/4/hr5/
+4|5|OFFICE ADMINISTRATOR LEVEL 5|https://easytvet.com/2/4/oa5/
+4|5|PROJECT MANAGER LEVEL 5|https://easytvet.com/2/4/pm5/
+4|5|SUPPLY CHAIN MANAGEMENT LEVEL 5|https://easytvet.com/2/4/sc5/
+4|4|OFFICE ASSISTANT LEVEL 4|https://easytvet.com/2/4/oas4/
+5|6|COMPUTER PROGRAMMING LEVEL 6|https://easytvet.com/2/5/compgrm6/
+5|6|COMPUTER SCIENCE LEVEL 6|https://easytvet.com/2/5/compscien6/
+5|6|CYBER SECURITY TECHNICIAN LEVEL 6|https://easytvet.com/2/5/sec6/
+5|6|GRAPHIC DESIGN LEVEL 6|https://easytvet.com/2/5/graphic6/
+5|6|ICT TECHNICIAN LEVEL 6|https://easytvet.com/2/5/ict6/
+5|5|CYBER SECURITY LEVEL 5|https://easytvet.com/2/5/sec5/
+5|5|GRAPHIC DESIGN LEVEL 5|https://easytvet.com/2/5/graphic5/
+5|5|ICT TECHNICIAN LEVEL 5|https://easytvet.com/2/5/ict5/
+5|4|ICT TECHNICIAN LEVEL 4|https://easytvet.com/2/5/ict4/
+6|6|ELECTRICAL ENGINEERING (POWER OPTION) LEVEL 6|https://easytvet.com/2/6/ee-po-6/
+6|6|ELECTRICAL INSTALLATION LEVEL 6|https://easytvet.com/2/6/eit6/
+6|6|ELECTRICAL TECHNICIAN (POWER OPTION) LEVEL 6|https://easytvet.com/2/6/et-po-6/
+6|6|ELECTRONICS ENGINEERING LEVEL 6|https://easytvet.com/2/6/electrinics-eng6/
+6|6|ELECTRONICS TECHNICIAN LEVEL 6|https://easytvet.com/2/6/et6/
+6|6|TELECOMMUNICATION ENGINEERING LEVEL 6|https://easytvet.com/2/6/telcom6/
+6|5|ELECTRICAL INSTALLATION LEVEL 5|https://easytvet.com/2/6/ei5/
+6|5|ELECTRICAL OPERATION LEVEL 5|https://easytvet.com/2/6/eo5/
+6|5|ELECTRONICS CRAFTSPERSON LEVEL 5|https://easytvet.com/2/6/elec-craft5/
+6|5|ELECTRONICS ENGINEERING LEVEL 5|https://easytvet.com/2/6/electrinics-eng5/
+6|4|ELECTRICAL INSTALLATION LEVEL 4|https://easytvet.com/2/6/ei4/
+6|4|SOLAR PV INSTALLATION LEVEL 4|https://easytvet.com/2/6/solarpvinstall4/
+6|3|ELECTRICAL INSTALLATION LEVEL 3|https://easytvet.com/2/6/eit3/
+6|3|SOLAR PV INSTALLATION LEVEL 3|https://easytvet.com/2/6/solarpvinstall3/
+7|6|BEAUTY THERAPY LEVEL 6|https://easytvet.com/2/7/btr6/
+7|6|FASHION DESIGN MANAGEMENT LEVEL 6|https://easytvet.com/2/7/fdm6/
+7|6|HAIRDRESSER LEVEL 6|https://easytvet.com/2/7/hd6/
+7|6|HAIRDRESSING MANAGEMENT LEVEL 6|https://easytvet.com/2/7/hdm6/
+7|6|LEATHER TECHNOLOGY LEVEL 6|https://easytvet.com/2/7/leathertec6/
+7|6|TEXTILE TECHNICIAN LEVEL 6|https://easytvet.com/2/7/tex6/
+7|5|BEAUTY THERAPIST LEVEL 5|https://easytvet.com/2/7/btr5/
+7|5|FASHION DESIGN LEVEL 5|https://easytvet.com/2/7/fd5/
+7|5|FOOTWEAR PRODUCER LEVEL 5|https://easytvet.com/2/7/ftw5/
+7|5|HAIRDRESSER LEVEL 5|https://easytvet.com/2/7/hd5/
+7|5|LEATHER GOODS PRODUCTION LEVEL 5|https://easytvet.com/2/7/leathergoods5/
+7|5|LEATHER PROCESSING (TANNING) LEVEL 5|https://easytvet.com/2/7/leatherpro-t-5/
+7|5|TEXTILE PROCESSING CRAFTSPERSON LEVEL 5|https://easytvet.com/2/7/tex5/
+7|4|BEAUTY THERAPIST LEVEL 4|https://easytvet.com/2/7/btr4/
+7|4|FASHION DESIGN LEVEL 4|https://easytvet.com/2/7/fd4/
+7|4|HAIRDRESSING LEVEL 4|https://easytvet.com/2/7/hd4/
+7|3|BEAUTY THERAPIST LEVEL 3|https://easytvet.com/2/7/btr3/
+7|3|FASHION DESIGN (DRESSMAKING AND TAILORING OPTIONS) LEVEL 3|https://easytvet.com/2/7/fdd3/
+7|3|FASHION DESIGN (TAILORING OPTION) LEVEL 3|https://easytvet.com/2/7/fdt3/
+8|6|COMMUNITY HEALTH LEVEL 6|https://easytvet.com/2/8/ch6/
+8|6|HEALTH RECORDS AND INFORMATION TECHNOLOGY LEVEL 6|https://easytvet.com/2/8/hrit6/
+8|6|MEDICAL LABORATORY TECHNOLOGY LEVEL 6|https://easytvet.com/2/8/medlabtec6/
+8|6|NUTRITION AND DIETETICS LEVEL 6|https://easytvet.com/2/8/nud6/
+8|6|PERIOPERATIVE THEATRE TECHNOLOGY LEVEL 6|https://easytvet.com/2/8/ptt6/
+8|6|SCIENCE LABORATORY TECHNOLOGY LEVEL 6|https://easytvet.com/2/8/sclab6/
+8|5|COMMUNITY HEALTH LEVEL 5|https://easytvet.com/2/8/ch5/
+8|5|HEALTH RECORDS AND INFORMATION TECHNOLOGY LEVEL 5|https://easytvet.com/2/8/hrit5/
+8|5|NUTRITION AND DIETETICS LEVEL 5|https://easytvet.com/2/8/nud5/
+8|5|PERIOPERATIVE THEATRE TECHNOLOGY LEVEL 5|https://easytvet.com/2/8/ptt5/
+8|5|SCIENCE LABORATORY TECHNOLOGY LEVEL 5|https://easytvet.com/2/8/sclab5/
+8|4|COMMUNITY HEALTH LEVEL 4|https://easytvet.com/2/8/ch4/
+9|6|BAKING TECHNOLOGY LEVEL 6|https://easytvet.com/2/9/bt6/
+9|6|FOOD & BEVERAGE SALES AND SERVICE MANAGEMENT LEVEL 6|https://easytvet.com/2/9/fbsales6/
+9|6|FOOD PRODUCTION (CULINARY ARTS) LEVEL 6|https://easytvet.com/2/9/fbp-cul-6/
+9|6|FOOD TECHNOLOGY LEVEL 6|https://easytvet.com/2/9/ft6/
+9|6|HOUSEKEEPING AND ACCOMMODATION LEVEL 6|https://easytvet.com/2/9/ha6/
+9|6|TOURISM AND TRAVEL MANAGEMENT LEVEL 6|https://easytvet.com/2/9/tm6/
+9|5|BAKING TECHNOLOGY LEVEL 5|https://easytvet.com/2/9/bt5/
+9|5|FOOD AND BEVERAGE PRODUCTION (CULINARY ARTS) LEVEL 5|https://easytvet.com/2/9/fbp-cul-5/
+9|5|FOOD AND BEVERAGE SALES AND SERVICE LEVEL 5|https://easytvet.com/2/9/fbsales5/
+9|5|FOOD PRODUCTION (CULINARY ARTS) LEVEL 5|https://easytvet.com/2/9/fp5/
+9|5|FOOD TECHNOLOGY LEVEL 5|https://easytvet.com/2/9/ft5/
+9|5|HOUSEKEEPING AND ACCOMMODATION LEVEL 5|https://easytvet.com/2/9/ha5/
+9|5|TOUR AND TRAVEL CONSULTANCY LEVEL 5|https://easytvet.com/2/9/ttc5/
+9|5|TOUR AND TRAVEL CONSULTANT LEVEL 5|https://easytvet.com/2/9/tm5/
+9|5|TOUR GUIDE LEVEL 5|https://easytvet.com/2/9/tg5/
+9|5|WILDLIFE MANAGEMENT ASSISTANT LEVEL 5|https://easytvet.com/2/9/wma5/
+9|4|BAKING TECHNOLOGY (CAKE DECORATION AND PASTRY) LEVEL 4|https://easytvet.com/2/9/bt4-c-p/
+9|4|FOOD AND BEVERAGE PRODUCTION (CULINARY ART) LEVEL 4|https://easytvet.com/2/9/fbp-cul-4/
+9|4|FOOD AND BEVERAGE SALES AND SERVICE LEVEL 4|https://easytvet.com/2/9/fbsales4/
+9|4|FOOD PRODUCTION (CULINARY ARTS) LEVEL 4|https://easytvet.com/2/9/fp4-cul-4/
+9|4|HOUSEKEEPING AND ACCOMMODATION LEVEL 4|https://easytvet.com/2/9/ha4/
+9|3|FOOD AND BEVERAGE SALES AND SERVICE OPERATOR LEVEL 3|https://easytvet.com/2/9/fbs3/
+9|3|FOOD PRODUCTION (CULINARY ARTS) TECHNICIAN LEVEL 3|https://easytvet.com/2/9/fp3/
+10|6|AUTOBODY TECHNICIAN LEVEL 6|https://easytvet.com/2/10/atb6/
+10|6|AUTOMOTIVE MECHATRONICS TECHNOLOGY LEVEL 6|https://easytvet.com/2/10/amt6/
+10|6|AUTOMOTIVE ENGINEERING TECHNICIAN LEVEL 6|https://easytvet.com/2/10/auto-eng6/
+10|6|AUTOMOTIVE TECHNICIAN LEVEL 6|https://easytvet.com/2/10/autotec6/
+10|6|INDUSTRIAL AUTOMATION AND ROBOTICS LEVEL 6|https://easytvet.com/2/10/indcontrolrbt6/
+10|6|INDUSTRIAL CONTROL AND INSTRUMENTATION LEVEL 6|https://easytvet.com/2/10/indicontrol6/
+10|6|INDUSTRIAL MECHATRONICS TECHNOLOGY LEVEL 6|https://easytvet.com/2/10/indmech6/
+10|6|INDUSTRIAL PLANT OPERATIONS LEVEL 6|https://easytvet.com/2/10/indpo6/
+10|6|MECHANICAL PLANT TECHNOLOGY LEVEL 6|https://easytvet.com/2/10/mecplanttec6/
+10|6|MECHANICAL TECHNOLOGY (PRODUCTION) LEVEL 6|https://easytvet.com/2/10/mectecpro6/
+10|6|MECHANICAL TECHNOLOGY AND MAINTENANCE TECHNICIAN LEVEL 6|https://easytvet.com/2/10/mectecmain6/
+10|6|MECHATRONIC TECHNICIAN LEVEL 6|https://easytvet.com/2/10/mectronic6/
+10|6|REFRIGERATION AND AIR CONDITIONING TECHNICIAN LEVEL 6|https://easytvet.com/2/10/rac6/
+10|6|WELDING AND FABRICATION LEVEL 6|https://easytvet.com/2/10/w6/
+10|5|AUTOMOTIVE CRAFTSPERSON LEVEL 5|https://easytvet.com/2/10/acp5/
+10|5|AUTOMOTIVE ENGINEERING LEVEL 5|https://easytvet.com/2/10/auto-eng5/
+10|5|AUTOMOTIVE TECHNICIAN LEVEL 5|https://easytvet.com/2/10/autotec5/
+10|5|INDUSTRIAL PLANT OPERATIONS LEVEL 5|https://easytvet.com/2/10/indpo5/
+10|5|MECHANICAL PLANT TECHNICIAN LEVEL 5|https://easytvet.com/2/10/mecplanttec5/
+10|5|MECHANICAL PRODUCTION TECHNICIAN LEVEL 5|https://easytvet.com/2/10/mecprotecd5/
+10|5|MECHATRONICS TECHNOLOGY LEVEL 5|https://easytvet.com/2/10/mectronic5/
+10|5|REFRIGERATION AND AIR CONDITIONING CRAFTSPERSON LEVEL 5|https://easytvet.com/2/10/rac5/
+10|5|WELDING AND FABRICATION CRAFTSPERSON LEVEL 5|https://easytvet.com/2/10/w5/
+10|4|AUTOMOTIVE MECHANIC LEVEL 4|https://easytvet.com/2/10/am4/
+10|4|AUTOMOTIVE TECHNOLOGY LEVEL 4|https://easytvet.com/2/10/aa4/
+10|4|AUTOMOTIVE TECHNOLOGY LEVEL 4|https://easytvet.com/2/10/auto4/
+10|4|INDUSTRIAL PLANT OPERATIONS LEVEL 4|https://easytvet.com/2/10/indpo4/
+10|4|MANUAL METAL ARC AND GAS METAL ARC WELDING LEVEL 4|https://easytvet.com/2/10/mg4/
+10|4|MECHANICAL PRODUCTION (LATHE AND FABRICATION) ARTISAN LEVEL 4|https://easytvet.com/2/10/mpa4/
+10|4|REFRIGERATION AND AIR CONDITIONING ARTISAN LEVEL 4|https://easytvet.com/2/10/rac4/
+10|4|WELDING LEVEL 4|https://easytvet.com/2/10/w4/
+10|3|AUTOMOTIVE MECHANIC LEVEL 3|https://easytvet.com/2/10/am3/
+10|3|GAS WELDING LEVEL 3|https://easytvet.com/2/10/w3/
+11|6|CHILD PROTECTION LEVEL 6|https://easytvet.com/2/11/cp6/
+11|6|COUNSELLING PSYCHOLOGY LEVEL 6|https://easytvet.com/2/11/cousell6/
+11|6|SOCIAL WORK AND COMMUNITY DEVELOPMENT LEVEL 6|https://easytvet.com/2/11/sw6/
+11|5|CHILD PROTECTION LEVEL 5|https://easytvet.com/2/11/cp5/
+11|5|COUNSELLING PSYCHOLOGY LEVEL 5|https://easytvet.com/2/11/cousell5/
+11|5|SOCIAL WORK AND COMMUNITY DEVELOPMENT LEVEL 5|https://easytvet.com/2/11/sw5/
+11|4|SOCIAL WORK AND COMMUNITY DEVELOPMENT LEVEL 4|https://easytvet.com/2/11/sw4/
