@@ -477,4 +477,276 @@ Under the Kenya National Qualifications Framework (KNQF), your KCSE mean grade d
 
 Explore all **11 departments** and preview the exact units taught in each course in our [Modular CDACC Cycle 3 Directory](/modular-cdacc-courses-cycle-3/) and [KNEC Courses Hub](/knec-courses/).`,
   },
+  {
+    id: 'article-kevin-furaha-tenp-assistive-robot-036',
+    author_id: 'author-editorial-team-002',
+    title: 'Meet Kevin Furaha ("Mr. Robot"): The TENP Alumnus & Telecommunication Trainer Building Assistive Robots in Kenya',
+    slug: 'kevin-furaha-mr-robot-tenp-assistive-robot-kenya',
+    excerpt:
+      'How Kevin Furaha, an alumnus and Telecommunication trainer at The Eldoret National Polytechnic (TENP), built an assistive robot in November 2026 to help persons with disabilities and people without smartphones access digital information.',
+    category: 'course_spotlight',
+    source_name: 'The Eldoret National Polytechnic (TENP) & Vipasho',
+    source_url: 'https://www.tenp.ac.ke/department?id=6',
+    is_official_source: true,
+    featured_image_url: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80',
+    featured_image_alt: 'Electrical and telecommunication engineering robotics workbench in Kenya',
+    is_cover_mockup: false,
+    published: true,
+    noindex: false,
+    published_at: '2026-11-16T08:00:00Z',
+    updated_at: '2026-11-16T11:00:00Z',
+    content: `## Bridging the Digital Divide Through Practical Kenyan TVET Innovation
+
+In November 2026, **Mr. Kevin Furaha**, an alumnus and Telecommunication trainer at **The Eldoret National Polytechnic (TENP)**, gained national recognition for developing an **assistive information robot** designed to help **persons with disabilities** and **underprivileged individuals** access digital information without needing a smartphone.
+
+Highlighted by both [The Eldoret National Polytechnic](https://www.facebook.com/TENPKENYA/videos/meet-mr-kevin-furaha-a-tenp-alumnus-and-trainer-in-telecommunication-who-is-insp/1854695012217643/) and [Vipasho](http://www.vipasho.co.ke/2026/11/tenp-alumnus-kevin-furaha-develops.html), Furaha's innovation demonstrates how Kenya's Technical and Vocational Education and Training (TVET) institutions are moving beyond theory to solve real-world community challenges.
+
+## Role and Background at The Eldoret National Polytechnic (TENP)
+
+### Department and Teaching Focus
+Mr. Furaha serves as a trainer in the [Department of Electrical and Electronics Engineering at TENP](https://www.tenp.ac.ke/department?id=6), where he specializes in **Telecommunication, automation, and security systems**. His teaching blends core electronics theory with applied system design so trainees graduate ready to build, troubleshoot, and deploy working hardware.
+
+### Academic Roots as a TENP Alumnus
+Furaha's connection to the polytechnic runs deep. Originally trained in electrical engineering at The Eldoret National Polytechnic himself, he returned to his alma mater as a faculty member to mentor the next generation of Kenyan technicians and technologists through hands-on, practical engineering projects.
+
+### Why Students Call Him "Mr. Robot"
+Across the TENP campus, students and colleagues affectionately nickname him **"Mr. Robot"** for his dedication to applied robotics, embedded systems, and creative problem-solving. His mentorship style encourages trainees to view everyday local challenges as opportunities for automation and engineering design—a culture also reflected in student-led AI and robotics initiatives at TENP.
+
+## Notable Engineering Innovations
+
+### 1. The Assistive Information Robot (November 2026)
+Showcased in late 2026 by TENP and covered by [Vipasho](http://www.vipasho.co.ke/2026/11/tenp-alumnus-kevin-furaha-develops.html), Furaha's **assistive robot** targets one of Kenya's most persistent accessibility barriers: millions of citizens—especially persons with disabilities and low-income residents—still lack smartphones or struggle to navigate standard mobile interfaces. By providing an accessible, interactive hardware interface to digital information, the robot helps bridge the digital divide for underserved communities.
+
+### 2. Earlier Practical Automation: Self-Service Posho Mill Water Meters
+Before gaining wider attention for his assistive robotics work, Mr. Furaha had already built a track record of practical, locally grounded automation projects—including **self-service posho mill water meters** engineered for everyday Kenyan community enterprises.
+
+## Watch the TENP Feature & Demonstration
+
+You can watch the official profile from The Eldoret National Polytechnic featuring Mr. Kevin Furaha discussing his journey as an alumnus-turned-trainer and demonstrating his assistive robot on [TENP's official Facebook video](https://www.facebook.com/TENPKENYA/videos/meet-mr-kevin-furaha-a-tenp-alumnus-and-trainer-in-telecommunication-who-is-insp/1854695012217643/), as well as related coverage from [TENP](https://www.facebook.com/TENPKENYA/posts/meet-mr-kevin-furaha-a-tenp-alumnus-and-trainer-in-telecommunication-who-is-insp/1797401562391415/) and [Mesh Media KE](https://www.facebook.com/meshmediake/videos/the-eldoret-national-polytechnic-students-invent-an-ai-powered-robot-designed-fo/1104605762439776/).
+
+## Inspired to Study Electrical or Telecommunication Engineering in Kenya?
+
+If Mr. Kevin Furaha's journey inspires you to pursue hands-on robotics, automation, telecommunication, or electrical engineering at a Kenyan National Polytechnic or Technical Training Institute, explore our competency units, occupational standards, and past papers:
+
+- **[Modular CDACC Electrical & Electronic Engineering Department](/modular-cdacc-courses-cycle-3/electrical-and-electronic-engineering-department/)**
+- **[KNEC Electrical & Electronics Engineering Courses](/knec-courses/electrical-and-electronics-engineering-department/)**
+- **[KNQF Level 6 National Diploma Courses](/levels/level-6/)**`,
+  },
+  {
+    id: 'article-abigael-chepkemoi-tenp-affordable-housing-landlady-037',
+    author_id: 'author-editorial-team-002',
+    title: 'From Mjengo Sites to Landlady at 21: How TENP Electrical Engineering Student Abigael Chepkemoi Became a Homeowner',
+    slug: 'abigael-chepkemoi-tenp-electrical-engineering-student-landlady-kenya',
+    excerpt:
+      'Discover how 21-year-old The Eldoret National Polytechnic (TENP) Electrical Engineering student Abigael Chepkemoi turned construction site hustle and technical skills into a 12th-floor home under Kenya’s Affordable Housing Programme.',
+    category: 'course_spotlight',
+    source_name: 'The Eldoret National Polytechnic (TENP) Spotlight',
+    source_url: 'https://www.facebook.com/TENPKENYA/posts/from-the-classroom-to-the-presidents-spotlight-meet-abigael-chepkemoi-a-landlady/1773978541400384/',
+    is_official_source: true,
+    featured_image_url: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80',
+    featured_image_alt: 'Young electrical engineering trainee working on a residential construction site in Kenya',
+    is_cover_mockup: false,
+    published: true,
+    noindex: false,
+    published_at: '2026-11-16T07:00:00Z',
+    updated_at: '2026-11-16T11:15:00Z',
+    content: `## From the Classroom to the President's Spotlight
+
+At just **21 years old**, **Abigael Chepkemoi**, an Electrical Engineering student at **The Eldoret National Polytechnic (TENP)**, has become a powerful symbol of what hands-on Technical and Vocational Education and Training (TVET) can achieve in Kenya. Her journey from working on local construction sites (*mjengo*) to owning a home under the **Affordable Housing Programme** has inspired thousands of Kenyan trainees nationwide.
+
+## The Journey of Abigael Chepkemoi
+
+### 1. Grounded in Electrical Engineering at TENP
+While pursuing her **Electrical Engineering** studies at [The Eldoret National Polytechnic](https://www.facebook.com/TENPKENYA/posts/from-the-classroom-to-the-presidents-spotlight-meet-abigael-chepkemoi-a-landlady/1773978541400384/), Abigael refused to wait until graduation to put her skills to work. To support herself financially and gain real-world site exposure, she took up jobs on construction sites.
+
+### 2. The Turning Point on Site
+Her breakthrough came when a site foreman needed qualified electrical personnel for building installations and selected Abigael directly from the crew. Because she had practical training from TENP, she stepped up with confidence—proving that technical competence opens doors immediately when opportunity knocks.
+
+### 3. Becoming a Young Landlady Through Disciplined Savings
+Using her site earnings and disciplined saving habits, Abigael raised a **KSh 32,000 deposit** for a bedsitter unit on the **12th floor of the Eldoret Pioneer Affordable Housing Project**. She also committed to manageable monthly installments of **KSh 3,800** to own the apartment outright, turning her technical hustle into long-term real estate equity at 21.
+
+### 4. Presidential Recognition
+During the official commissioning of the Eldoret Pioneer housing project, Abigael's remarkable transformation from construction worker to young homeowner and landlady caught the attention of **President William Ruto**, as highlighted by [TENP](https://www.facebook.com/TENPKENYA/posts/from-the-classroom-to-the-presidents-spotlight-meet-abigael-chepkemoi-a-landlady/1773978541400384/) and [community coverage](https://www.facebook.com/groups/1885589118191599/posts/28665757713081376/).
+
+## More Inspiring Student Stories at TENP
+
+Abigael's achievement sits alongside a growing wave of student excellence at The Eldoret National Polytechnic:
+
+- **Modesta Achieng (Civil Engineering & Creative Arts):** A Diploma in Civil Engineering student who tapped into TENP's holistic support to nurture her talents in acting, dancing, and calligraphy—earning a prestigious role as a calligrapher at the **Kenya National Music and Culture Festival**, as featured in [TENP's student spotlight](https://www.facebook.com/TENPKENYA/videos/she-is-studying-to-build-structures-but-her-story-is-building-something-even-big/5113542705538639/).
+- **Charles Koech's Athletics Scholars:** Needy student-athletes mentored under **Charles Koech** at TENP have used national polytechnic and KATTI games as a springboard to win international sports scholarships, including opportunities in **Austria**, as reported by [Education News](https://educationnews.co.ke/athletics-talent-wins-poor-eldoret-poly-student-scholarship).
+
+## Key Lessons for Kenyan TVET Trainees
+
+1. **Start Applying Your Trade Early:** Site exposure, attachments, and holiday jobs build the confidence and networks that turn classroom theory into income.
+2. **Pair Technical Skill with Financial Discipline:** Even modest artisan and technician earnings can build lasting assets when paired with clear savings goals.
+3. **Explore Your Full Potential on Campus:** Whether in engineering workshops, creative arts, or sports, polytechnics offer platforms that can transform your life trajectory.
+
+Ready to start or advance your own engineering journey? Explore our free past papers and competency guides:
+
+- **[Modular CDACC Electrical & Electronic Engineering Department](/modular-cdacc-courses-cycle-3/electrical-and-electronic-engineering-department/)**
+- **[KNEC Electrical & Electronics Engineering Courses](/knec-courses/electrical-and-electronics-engineering-department/)**
+- **[Modular CDACC Building & Civil Engineering Department](/modular-cdacc-courses-cycle-3/building-and-civil-engineering-department/)**`,
+  },
+  {
+    id: 'article-maurine-awino-adera-modesh-bakers-tenp-038',
+    author_id: 'author-editorial-team-002',
+    title: 'From Hospitality Graduate to CEO: How TENP Alumna Maurine Awino Adera Built Modesh Bakers & Empowerment Hub',
+    slug: 'maurine-awino-adera-tenp-alumna-modesh-bakers-empowerment-hub',
+    excerpt:
+      'Learn how The Eldoret National Polytechnic (TENP) alumna Maurine Awino Adera turned post-graduation job challenges into Modesh Bakers and the Modesh Empowerment Hub, proving the power of TVET hospitality skills.',
+    category: 'course_spotlight',
+    source_name: 'The Eldoret National Polytechnic (TENP) Alumni Spotlight',
+    source_url: 'https://www.facebook.com/TENPKENYA/posts/meet-maurine-awino-adera-an-alumna-of-the-eldoret-national-polytechnic-and-ceo-m/1777154991082739/',
+    is_official_source: true,
+    featured_image_url: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1200&q=80',
+    featured_image_alt: 'Kenyan commercial bakery and pastry entrepreneur preparing fresh baked goods',
+    is_cover_mockup: false,
+    published: true,
+    noindex: false,
+    published_at: '2026-11-16T06:00:00Z',
+    updated_at: '2026-11-16T11:15:00Z',
+    content: `## Turning Practical Hospitality Training into Business Ownership
+
+For many Kenyan TVET graduates, finishing college is just the beginning of the real test: navigating a competitive job market. **Maurine Awino Adera**, an alumna of **The Eldoret National Polytechnic (TENP)** and the founder and CEO of **Modesh Bakers** and the **Modesh Empowerment Hub**, shows how technical hospitality skills can become a thriving enterprise—and a lifeline for others.
+
+Featured in an official alumni spotlight by [The Eldoret National Polytechnic](https://www.facebook.com/TENPKENYA/posts/meet-maurine-awino-adera-an-alumna-of-the-eldoret-national-polytechnic-and-ceo-m/1777154991082739/) and [TENP's video profile](https://www.facebook.com/TENPKENYA/videos/meet-maurine-awino-adera-an-alumna-of-the-eldoret-national-polytechnic-and-ceo-m/1454644863292994/), Adera's journey highlights why vocational education is one of Kenya's strongest engines for self-employment.
+
+## Academic Roots & Mentorship at TENP (2012–2014)
+
+### Diploma in Food and Beverage and Hospitality
+Maurine Awino Adera studied at **The Eldoret National Polytechnic from 2012 to 2014**, earning a **Diploma in Food and Beverage and Hospitality**. During her training, she gained hands-on mastery in food production, baking, kitchen operations, and customer service.
+
+### The Power of a Dedicated Mentor
+A defining part of her college experience was the mentorship she received from her former lecturer, **Madame Eivelyn**, whose encouragement and practical guidance pushed Maurine to see beyond job-seeking and consider entrepreneurship.
+
+## Overcoming Post-Graduation Hurdles
+
+After graduating in 2014, Adera faced a challenge familiar to many young Kenyan graduates: struggling to secure formal employment in a favorable work environment. Rather than giving up or abandoning her trade, she leaned on the practical skills she had mastered at TENP and decided to build her own table.
+
+## Business & Community Impact
+
+### 1. Modesh Bakers
+As founder and CEO of **Modesh Bakers**, Maurine transformed her technical food production and hospitality training into a commercial baking enterprise—demonstrating how TVET graduates can launch scalable local businesses with high everyday demand.
+
+### 2. Modesh Empowerment Hub
+Beyond running a successful bakery, Adera founded the **Modesh Empowerment Hub**, a community-focused initiative dedicated to uplifting others and equipping aspiring entrepreneurs and youth with practical, dignified skills.
+
+## Watch Maurine Awino Adera's Alumni Spotlight
+
+Watch her full story in TENP's alumni feature on [Facebook Video](https://www.facebook.com/TENPKENYA/videos/meet-maurine-awino-adera-an-alumna-of-the-eldoret-national-polytechnic-and-ceo-m/1454644863292994/) and read the [TENP Alumni Spotlight post](https://www.facebook.com/TENPKENYA/posts/meet-maurine-awino-adera-an-alumna-of-the-eldoret-national-polytechnic-and-ceo-m/1777154991082739/).
+
+## Start Your Own Hospitality & Baking Career
+
+If Maurine's journey from TENP trainee to CEO inspires you, explore Kenyan TVET hospitality, catering, and baking courses and past papers on EasyTVET Hub:
+
+- **[Modular CDACC Catering & Accommodation Department](/modular-cdacc-courses-cycle-3/catering-and-accommodation-department/)**
+- **[KNQF Level 6 National Diploma Courses](/levels/level-6/)**`,
+  },
+  {
+    id: 'article-marion-nyabiba-tenp-ict-austria-athletics-scholarship-039',
+    author_id: 'author-editorial-team-002',
+    title: 'From TENP ICT Classroom to Austria: How Athletics Talent Won Trainee Marion Nyabiba an International Scholarship',
+    slug: 'marion-nyabiba-tenp-ict-trainee-austria-athletics-scholarship',
+    excerpt:
+      'How Marion Nyabiba, a second-module ICT trainee at The Eldoret National Polytechnic (TENP), combined technical studies with KATTI athletics excellence to win an Austria-based international scholarship.',
+    category: 'course_spotlight',
+    source_name: 'Education News Kenya & TENP Athletics',
+    source_url: 'https://educationnews.co.ke/athletics-talent-wins-poor-eldoret-poly-student-scholarship',
+    is_official_source: false,
+    featured_image_url: 'https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=1200&q=80',
+    featured_image_alt: 'Kenyan college track athlete sprinting toward international scholarship success',
+    is_cover_mockup: false,
+    published: true,
+    noindex: false,
+    published_at: '2026-11-16T05:00:00Z',
+    updated_at: '2026-11-16T11:15:00Z',
+    content: `## Where Technical Education Meets World-Class Athletic Opportunity
+
+Every year, thousands of Kenyan students enroll in National Polytechnics and Technical Training Institutes expecting to leave with a trade certificate or diploma. For **Marion Nyabiba**, a **second-module Information Communication and Technology (ICT) trainee** at **The Eldoret National Polytechnic (TENP)**, polytechnic life opened an unexpected international door: an **Austria-based sports scholarship** earned through her athletics talent.
+
+As reported by [Education News Kenya](https://educationnews.co.ke/athletics-talent-wins-poor-eldoret-poly-student-scholarship), Marion's story proves that financial background never defines a TVET student's ceiling when talent, discipline, and institutional support come together.
+
+## Balancing ICT Studies with Track Excellence at TENP
+
+### A Second-Module ICT Trainee with Big Ambitions
+While mastering her coursework as a second-module **Information Communication and Technology (ICT)** trainee at TENP, Marion remained committed to training on the track. Balancing modular technical assessments with rigorous athletic preparation required focus and resilience.
+
+### The Role of TENP's Athletics Programme & KATTI Games
+The Eldoret National Polytechnic—located in Kenya's famed Rift Valley athletics heartland—has built a strong track record of nurturing needy student-athletes through structured coaching, including trainees mentored by **Charles Koech**. By competing and excelling in **national polytechnic and KATTI (Kenya Association of Technical Training Institutions) games**, Marion caught the attention of international scouts and earned a life-changing **scholarship opportunity in Austria**.
+
+## Why Co-Curricular Platforms Matter in Kenyan TVET Institutions
+
+Marion Nyabiba's breakthrough is part of a broader pattern of holistic student development at Kenyan TVET institutions:
+
+1. **Sports & KATTI Championships Open Global Doors:** National polytechnic competitions give talented youth visibility to international scouts, clubs, and university scholarship programmes.
+2. **Technical Skills Remain Your Foundation:** Pairing athletics with an in-demand qualification like **ICT** ensures long-term career security both on and off the track.
+3. **Supportive Coaching Transforms Lives:** Dedicated coaches and institutional sports departments turn raw talent from humble backgrounds into international success stories.
+
+## Explore ICT & Computing Courses in Kenya
+
+Whether you are a student-athlete or an aspiring technologist looking to build a career in software, networking, or systems administration, browse our free ICT course outlines and past papers:
+
+- **[Modular CDACC Computing & Informatics Department](/modular-cdacc-courses-cycle-3/computing-and-informatics-department/)**
+- **[KNEC Courses Directory](/knec-courses/)**`,
+  },
+  {
+    id: 'article-jonathan-kibet-kaiboi-solar-pv-unesco-bear-040',
+    author_id: 'author-editorial-team-002',
+    title: 'From Setback to Solar Success at 50: Jonathan Kibet’s TVET Reskilling Journey at Kaiboi National Polytechnic',
+    slug: 'jonathan-kibet-solar-pv-reskilling-kaiboi-national-polytechnic-kenya',
+    excerpt:
+      'How 50-year-old technician Jonathan Kibet went from informal Jua Kali work after losing his Moi University job to mastering modern solar PV sizing and testing through UNESCO’s BEAR project at Kaiboi National Polytechnic.',
+    category: 'course_spotlight',
+    source_name: 'UNESCO Better Education for Africa’s Rise (BEAR)',
+    source_url: 'https://www.unesco.org/en/articles/setback-solar-success-jonathan-kibets-journey-redemption-kenya',
+    is_official_source: true,
+    featured_image_url: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1200&q=80',
+    featured_image_alt: 'Kenyan solar PV technician inspecting photovoltaic panels and system sizing',
+    is_cover_mockup: false,
+    published: true,
+    noindex: false,
+    published_at: '2026-11-16T04:00:00Z',
+    updated_at: '2026-11-16T11:23:00Z',
+    content: `## "It Was My Redemption": Reskilling at Age 50
+
+Technical education is not only for fresh KCSE school leavers—it is also a powerful second chance for experienced artisans and technicians whose trades have evolved. That truth is captured in the story of **Jonathan Kibet**, who in **2021, at the age of 50**, enrolled in a **solar photovoltaic (PV) training course** at **Kaiboi National Polytechnic** in Kenya.
+
+Delivered under **UNESCO’s Better Education for Africa’s Rise (BEAR)** project and supported by the **Republic of Korea**, the programme was specifically designed to retool and reskill youth and adults for changing job markets. Looking back on the opportunity, Jonathan summed it up simply:
+
+> "It was my redemption."
+
+## From Moi University Technician to the Jua Kali Sector
+
+### Early Career and Job Loss
+Jonathan originally earned a **Certificate in Electrical Engineering in 1991** and went on to serve **six years as a technician at Moi University**. However, after losing his job, he was forced into a string of informal jobs in Kenya’s **Jua Kali** sector—working as an independent artisan with little income security or formal structure.
+
+### Knowing When Skills Need Upgrading
+While working in the informal sector, Jonathan occasionally took on solar installation jobs. Yet he was honest with himself about the gap between his 1990s electrical background and modern solar PV engineering standards:
+
+> "I didn’t understand solar sizing, testing, or how to deal with power supply and load properly. I did my best, but I knew clients needed more than I could offer."
+
+## How Kaiboi National Polytechnic & UNESCO BEAR Changed His Trajectory
+
+By enrolling in the structured **Solar PV training** at **Kaiboi National Polytechnic** through the [UNESCO BEAR initiative](https://www.unesco.org/en/articles/setback-solar-success-jonathan-kibets-journey-redemption-kenya), Jonathan replaced guesswork with industry-standard competency in:
+
+1. **Accurate Solar Sizing & Load Assessment:** Matching panel wattage, battery bank capacity, charge controllers, and inverters to real household and commercial loads.
+2. **System Testing & Commissioning:** Applying proper diagnostic, insulation, and safety testing protocols before handing over installations to clients.
+3. **Modern Market Readiness:** Aligning decades of practical electrical grit with current renewable-energy standards demanded by Kenyan homeowners, schools, and businesses.
+
+## Why Lifelong TVET Retooling Matters in Kenya
+
+Jonathan Kibet's journey from setback to solar success offers three vital lessons for Kenyan technicians, Jua Kali artisans, and adult learners:
+
+- **It Is Never Too Late to Reskill:** Returning to a National Polytechnic at 50 transformed Jonathan's confidence, workmanship, and livelihood.
+- **Competency Beats Guesswork:** Formal TVET-CDACC and modular solar PV training closes critical technical gaps in sizing, load calculation, and safety testing—skills also required for **EPRA Solar PV licensing**.
+- **Green Skills Are Growing Rapidly:** As Kenya expands off-grid and hybrid solar adoption, certified solar PV technicians are in high demand across every county.
+
+## Explore Solar PV & Electrical Resources on EasyTVET Hub
+
+If Jonathan's story inspires you to upgrade your electrical skills or prepare for Solar PV certification and licensing, explore our free guides and course hubs:
+
+- **[How to Apply for EPRA Electrical Worker and Solar PV Technician Licenses in Kenya](/blog/how-to-apply-epra-electrical-solar-pv-technician-license-kenya/)**
+- **[Modular CDACC Electrical & Electronic Engineering Department](/modular-cdacc-courses-cycle-3/electrical-and-electronic-engineering-department/)**
+- **[KNEC Electrical & Electronics Engineering Courses](/knec-courses/electrical-and-electronics-engineering-department/)**`,
+  },
 ];
