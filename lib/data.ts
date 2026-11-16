@@ -29,6 +29,7 @@ async function fetchAllPaginated<T>(
       .from(table)
       .select('*')
       .order(orderBy, { ascending })
+      .order('id', { ascending: true })
       .range(from, from + BATCH_SIZE - 1);
 
     if (filterPublished) {

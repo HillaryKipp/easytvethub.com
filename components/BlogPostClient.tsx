@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import {
-  Sparkles,
   Clock,
   Calendar,
   CheckCircle2,
@@ -157,7 +156,7 @@ export function BlogPostClient({
                               }}
                               className="flex items-start gap-2 py-1 text-[#5c5766] hover:text-[#662c91] transition-colors leading-tight"
                             >
-                              <span className="text-[#8b8794] select-none">—</span>
+                              <span className="text-[#8b8794] select-none">-</span>
                               <span className="flex-1">{item.text}</span>
                             </a>
                           )}
@@ -390,7 +389,7 @@ function renderArticleMarkdown(
       continue;
     }
 
-    // Heading 2: with Sparkle icon ✦ matching screenshot
+    // Heading 2
     if (line.startsWith('## ')) {
       flushList();
       const text = line.slice(3).replace(/\*\*/g, '').trim();
@@ -399,10 +398,9 @@ function renderArticleMarkdown(
         <h2
           key={`h2-${key++}`}
           id={id}
-          className="mt-10 mb-4 pt-2 text-xl sm:text-2xl font-bold tracking-tight text-[#1d1823] flex items-center gap-2.5 scroll-mt-28"
+          className="mt-10 mb-4 pt-2 text-xl sm:text-2xl font-bold tracking-tight text-[#1d1823] scroll-mt-28"
         >
-          <Sparkles className="h-5 w-5 text-[#662c91] shrink-0" />
-          <span>{text}</span>
+          {text}
         </h2>
       );
     } else if (line.startsWith('### ')) {
@@ -413,10 +411,9 @@ function renderArticleMarkdown(
         <h3
           key={`h3-${key++}`}
           id={id}
-          className="mt-6 mb-3 text-lg font-bold text-[#1d1823] flex items-center gap-2 scroll-mt-28"
+          className="mt-6 mb-3 text-lg font-bold text-[#1d1823] scroll-mt-28"
         >
-          <span className="text-[#662c91] font-bold text-sm">✦</span>
-          <span>{text}</span>
+          {text}
         </h3>
       );
     } else if (line.startsWith('- ') || line.startsWith('* ')) {
@@ -525,7 +522,7 @@ function renderArticleMarkdown(
 }
 
 function renderInlineMarkdown(text: string): React.ReactNode {
-  const parts = text.split(/(\*\*.*?\*\*|`.*?`)/g);
+  const parts = text.split(/(\*\*.*?\*\*|`.*?`|\[[^\]]+\]\([^)]+\))/g);
   return parts.map((part, i) => {
     if (part.startsWith('**') && part.endsWith('**')) {
       return (
@@ -542,6 +539,32 @@ function renderInlineMarkdown(text: string): React.ReactNode {
         >
           {part.slice(1, -1)}
         </code>
+      );
+    }
+    const linkMatch = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+    if (linkMatch) {
+      const [, label, href] = linkMatch;
+      if (href.startsWith('/')) {
+        return (
+          <Link
+            key={i}
+            href={href}
+            className="font-semibold text-[#662c91] underline hover:text-[#4b1f6f]"
+          >
+            {label}
+          </Link>
+        );
+      }
+      return (
+        <a
+          key={i}
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-semibold text-[#662c91] underline hover:text-[#4b1f6f]"
+        >
+          {label}
+        </a>
       );
     }
     return part;

@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { Layers, BookOpen, Building2 } from 'lucide-react';
 import { getDirectoryData } from '@/lib/data';
 import { getEnvConfig } from '@/lib/supabase';
 import { toTitleCase, truncateDescription } from '@/lib/utils';
@@ -121,7 +120,6 @@ export default async function LevelHubPage({
 
       <header className="rounded-3xl border border-[#ebe7f0] bg-white p-6 sm:p-10 shadow-xs">
         <div className="inline-flex items-center gap-2 rounded-full bg-[#f4eff9] px-3 py-1 text-xs font-semibold text-[#662c91] mb-3 border border-purple-200">
-          <Layers className="h-3.5 w-3.5" />
           Qualification Hub • KNQF Level {lvl}
         </div>
         <h1 className="text-2xl sm:text-4xl font-extrabold text-[#1d1823] tracking-tight mb-4">
@@ -160,21 +158,16 @@ export default async function LevelHubPage({
               className="rounded-3xl border border-[#ebe7f0] bg-white p-6 sm:p-8 shadow-xs"
             >
               <div className="flex flex-wrap items-center justify-between gap-2 mb-5 pb-4 border-b border-[#ebe7f0]">
-                <div className="flex items-center gap-2.5">
-                  <span className="w-8 h-8 rounded-xl bg-[#f4eff9] text-[#662c91] flex items-center justify-center font-bold text-xs">
-                    <Building2 className="h-4 w-4" />
-                  </span>
-                  <div>
-                    <h2 className="text-base font-bold text-[#1d1823]">
-                      <Link
-                        href={`/${prog.slug}/${dept.slug}/level-${lvl}/`}
-                        className="hover:text-[#662c91]"
-                      >
-                        {toTitleCase(dept.name)} — Level {lvl} ({courses.length})
-                      </Link>
-                    </h2>
-                    <p className="text-xs text-[#8b8794]">{prog.name}</p>
-                  </div>
+                <div>
+                  <h2 className="text-base font-bold text-[#1d1823]">
+                    <Link
+                      href={`/${prog.slug}/${dept.slug}/level-${lvl}/`}
+                      className="hover:text-[#662c91]"
+                    >
+                      {toTitleCase(dept.name)} - Level {lvl} ({courses.length})
+                    </Link>
+                  </h2>
+                  <p className="text-xs text-[#8b8794]">{prog.name}</p>
                 </div>
                 <Link
                   href={`/${prog.slug}/${dept.slug}/`}
@@ -191,9 +184,8 @@ export default async function LevelHubPage({
                       href={course.path}
                       className="flex items-center justify-between rounded-xl border border-[#ebe7f0] bg-[#f8f5fd] p-3 text-xs font-semibold text-[#1d1823] hover:border-[#662c91] hover:text-[#662c91] transition-all"
                     >
-                      <span className="inline-flex items-center gap-2 truncate pr-2">
-                        <BookOpen className="h-3.5 w-3.5 text-[#662c91] shrink-0" />
-                        <span className="truncate">{toTitleCase(course.name)}</span>
+                      <span className="truncate pr-2">
+                        {toTitleCase(course.name)}
                       </span>
                       <span className="shrink-0 text-[11px] font-normal text-[#8b8794]">
                         {course.units.length} {course.units.length === 1 ? 'unit' : 'units'}

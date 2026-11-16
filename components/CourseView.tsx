@@ -1,52 +1,76 @@
 import Link from 'next/link';
+import { Calendar } from 'lucide-react';
+import { EnrichedArticle, EnrichedCourse } from '@/lib/types';
 import {
-  ArrowRight,
-  BookOpen,
-  Calendar,
-  Layers,
-  ArrowUpRight,
-  Sparkles,
-} from 'lucide-react';
-import { EnrichedCourse } from '@/lib/types';
-import { getCourseFAQs, getCourseIntro } from '@/lib/seo';
+  getContextualArticlesForCourse,
+  getCourseIntro,
+} from '@/lib/seo';
 import { formatDate, toTitleCase } from '@/lib/utils';
 import { Breadcrumbs } from './Breadcrumbs';
-import { FAQSection } from './FAQSection';
 import { buildCourseSchema } from '@/lib/jsonld';
 
 export function CourseView({
   course,
   allCourses = [],
+  articles = [],
 }: {
   course: EnrichedCourse;
   allCourses?: EnrichedCourse[];
+  articles?: EnrichedArticle[];
 }) {
-  const courseTitle = toTitleCase(course.name);
+  const isKnec = course.programme.slug.includes('knec');
+  const getKnecTierName = (lvl: number | null | undefined) => {
+    if (lvl === 6) return 'Diploma';
+    if (lvl === 5) return 'Certificate';
+    if (lvl === 4) return 'Artisan';
+    return lvl ? `Level ${lvl}` : 'TVET';
+  };
+
+  const rawCourseTitle = toTitleCase(course.name);
+  const courseHeadingTitle =
+    !isKnec && course.level && !/\blevel\s*\d+\b/i.test(rawCourseTitle)
+      ? `${rawCourseTitle} Level ${course.level}`
+      : rawCourseTitle;
+  const courseTitle = rawCourseTitle;
   const deptTitle = toTitleCase(course.department.name);
   const introText = getCourseIntro(course);
-  const faqs = getCourseFAQs(course);
   const courseSchema = buildCourseSchema(course, introText);
+  const contextualArticles = getContextualArticlesForCourse(course, articles);
 
-  // Same course name at other qualification levels
-  const normalizedName = course.name.trim().toUpperCase();
-  const sameCourseOtherLevels = allCourses.filter(
-    (c) =>
-      c.id !== course.id &&
-      c.name.trim().toUpperCase() === normalizedName &&
-      c.level !== course.level
-  );
+  const latestArticleDate =
+    contextualArticles.freshEditorialFeed[0]?.updated_at ||
+    contextualArticles.freshEditorialFeed[0]?.published_at;
+  const effectiveUpdatedAt =
+    latestArticleDate &&
+    new Date(latestArticleDate).getTime() > new Date(course.updated_at).getTime()
+      ? latestArticleDate
+      : course.updated_at;
 
-  // Other courses at the same level in the same department
+  const normalizedName = course.name
+    .replace(/\bLEVEL\s*\d+\b/gi, '')
+    .replace(/\bDIPLOMA\s+IN\b/gi, '')
+    .replace(/\bCRAFT\s+CERTIFICATE\s+IN\b/gi, '')
+    .replace(/\bARTISAN\s+CERTIFICATE\s+IN\b/gi, '')
+    .trim()
+    .toUpperCase();
+
+  const sameCourseOtherLevels = allCourses.filter((c) => {
+    if (c.id === course.id || c.level === course.level) return false;
+    const otherClean = c.name
+      .replace(/\bLEVEL\s*\d+\b/gi, '')
+      .replace(/\bDIPLOMA\s+IN\b/gi, '')
+      .replace(/\bCRAFT\s+CERTIFICATE\s+IN\b/gi, '')
+      .replace(/\bARTISAN\s+CERTIFICATE\s+IN\b/gi, '')
+      .trim()
+      .toUpperCase();
+    return otherClean === normalizedName && otherClean.length > 2;
+  });
+
   const otherSameLevelInDept = allCourses.filter(
     (c) =>
       c.id !== course.id &&
       c.department_id === course.department_id &&
       c.level === course.level
-  );
-
-  const totalResources = course.units.reduce(
-    (acc, u) => acc + (u.resources ? u.resources.length : 0),
-    0
   );
 
   return (
@@ -63,140 +87,60 @@ export function CourseView({
         ]}
       />
 
-      {/* Course Header */}
-      <header className="rounded-3xl border border-[#ebe7f0] bg-white p-6 sm:p-10 shadow-xs">
-        <div className="flex flex-wrap items-center gap-2 mb-3">
-          <Link
-            href={`/${course.programme.slug}/${course.department.slug}/`}
-            className="rounded-full bg-[#f4eff9] px-3 py-1 text-xs font-semibold text-[#662c91] hover:underline"
-          >
-            {deptTitle}
-          </Link>
-          {course.level && (
+      {/* 1. Compact Course Header (Title only, immediate units below for retention) */}
+      <header className="rounded-3xl border border-[#ebe7f0] bg-white p-6 sm:p-8 shadow-xs">
+        <div className="flex flex-wrap items-center justify-between gap-2 mb-2.5">
+          <div className="flex flex-wrap items-center gap-2">
             <Link
-              href={`/levels/level-${course.level}/`}
-              className="rounded-full bg-[#fbeced] px-3 py-1 text-xs font-semibold text-[#bd1e2c] hover:underline"
+              href={`/${course.programme.slug}/${course.department.slug}/`}
+              className="rounded-full bg-[#f4eff9] px-3 py-1 text-xs font-semibold text-[#662c91] hover:underline"
             >
-              Level {course.level} Qualification
+              {deptTitle}
             </Link>
-          )}
+            {course.level && (
+              <Link
+                href={`/levels/level-${course.level}/`}
+                className="rounded-full bg-[#fbeced] px-3 py-1 text-xs font-semibold text-[#bd1e2c] hover:underline"
+              >
+                {isKnec ? `KNEC ${getKnecTierName(course.level)}` : `Level ${course.level} Qualification`}
+              </Link>
+            )}
+            <span className="rounded-full bg-[#f7f5fa] px-3 py-1 text-xs font-semibold text-[#5c5766]">
+              {course.modules.length} {course.modules.length === 1 ? 'Module' : 'Modules'} • {course.units.length} Units
+            </span>
+          </div>
+
+          <div className="inline-flex items-center gap-1.5 text-xs text-[#8b8794]">
+            <Calendar className="h-3.5 w-3.5" />
+            <span>
+              Updated: <time dateTime={effectiveUpdatedAt}>{formatDate(effectiveUpdatedAt)}</time>
+            </span>
+          </div>
         </div>
 
-        <h1 className="text-2xl sm:text-4xl font-extrabold text-[#1d1823] tracking-tight mb-4">
-          {courseTitle}
+        <h1 className="text-2xl sm:text-4xl font-extrabold text-[#1d1823] tracking-tight">
+          {courseHeadingTitle}
         </h1>
-
-        <p className="text-sm sm:text-base text-[#5c5766] leading-relaxed max-w-3xl">
-          {introText}
-        </p>
-
-        {course.description && course.description !== course.intro && (
-          <p className="mt-3 text-xs sm:text-sm text-[#8b8794] leading-relaxed">
-            {course.description}
-          </p>
-        )}
       </header>
 
-      {/* Quick-Facts Table */}
-      <section className="rounded-3xl border border-[#ebe7f0] bg-white p-6 sm:p-8 shadow-xs">
-        <h2 className="text-lg font-bold text-[#1d1823] mb-4">
-          {courseTitle} Quick Overview
+      {/* 2. FIRST PRIORITY: Units in {course} per module (Immediate Card List) */}
+      <section id="competency-units">
+        <h2 className="text-lg sm:text-xl font-bold text-[#1d1823] mb-4">
+          {courseHeadingTitle} Units
         </h2>
-        <div className="overflow-x-auto">
-          <table className="w-full text-left border-collapse text-xs sm:text-sm">
-            <tbody className="divide-y divide-[#ebe7f0]">
-              <tr>
-                <th className="py-2.5 pr-4 font-semibold text-[#8b8794] w-1/3">
-                  Programme
-                </th>
-                <td className="py-2.5 pl-4 font-medium text-[#1d1823]">
-                  <Link
-                    href={`/${course.programme.slug}/`}
-                    className="text-[#662c91] hover:underline"
-                  >
-                    {course.programme.name}
-                  </Link>
-                </td>
-              </tr>
-              <tr>
-                <th className="py-2.5 pr-4 font-semibold text-[#8b8794]">
-                  Department
-                </th>
-                <td className="py-2.5 pl-4 font-medium text-[#1d1823]">
-                  <Link
-                    href={`/${course.programme.slug}/${course.department.slug}/`}
-                    className="text-[#662c91] hover:underline"
-                  >
-                    {deptTitle}
-                  </Link>
-                </td>
-              </tr>
-              <tr>
-                <th className="py-2.5 pr-4 font-semibold text-[#8b8794]">
-                  Qualification Level
-                </th>
-                <td className="py-2.5 pl-4 font-medium text-[#1d1823]">
-                  {course.level ? (
-                    <Link
-                      href={`/levels/level-${course.level}/`}
-                      className="text-[#662c91] hover:underline"
-                    >
-                      KNQF Level {course.level}
-                    </Link>
-                  ) : (
-                    'Standard TVET Qualification'
-                  )}
-                </td>
-              </tr>
-              <tr>
-                <th className="py-2.5 pr-4 font-semibold text-[#8b8794]">
-                  Number of Modules
-                </th>
-                <td className="py-2.5 pl-4 font-medium text-[#1d1823]">
-                  {course.modules.length} {course.modules.length === 1 ? 'Module' : 'Modules'}
-                </td>
-              </tr>
-              <tr>
-                <th className="py-2.5 pr-4 font-semibold text-[#8b8794]">
-                  Competency Units
-                </th>
-                <td className="py-2.5 pl-4 font-medium text-[#1d1823]">
-                  {course.units.length} {course.units.length === 1 ? 'Unit' : 'Units'} ({totalResources} downloadable files)
-                </td>
-              </tr>
-              <tr>
-                <th className="py-2.5 pr-4 font-semibold text-[#8b8794]">
-                  Last Updated
-                </th>
-                <td className="py-2.5 pl-4 text-[#5c5766]">
-                  <time dateTime={course.updated_at}>{formatDate(course.updated_at)}</time>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      {/* Units in {course} per module */}
-      <section>
-        <div className="mb-6">
-          <h2 className="text-xl sm:text-2xl font-bold text-[#1d1823]">
-            Competency Units in {courseTitle}
-          </h2>
-          <p className="text-xs sm:text-sm text-[#5c5766] mt-1">
-            Select any unit below to view unit details and download free past papers, assessor guides, candidate tools, and cutting lists.
-          </p>
-        </div>
 
         {course.modules.length > 0 ? (
-          <div className="space-y-6">
+          <div className="space-y-5">
             {course.modules.map((mod) => (
               <div
                 key={mod.id}
                 className="rounded-3xl border border-[#ebe7f0] bg-white p-6 sm:p-8 shadow-xs"
               >
                 <div className="flex items-center justify-between gap-2 mb-4 pb-3 border-b border-[#ebe7f0]">
-                  <h3 className="text-base font-bold text-[#1d1823]">
+                  <h3
+                    id={`module-${mod.module_number}`}
+                    className="text-base font-bold text-[#1d1823]"
+                  >
                     Module {mod.module_number}
                     {mod.title && mod.title.toLowerCase() !== `module ${mod.module_number}`
                       ? `: ${mod.title}`
@@ -225,16 +169,9 @@ export function CourseView({
                           <div className="flex items-center gap-2">
                             {u.resources.length > 0 && (
                               <span className="rounded-full bg-[#fbeced] text-[#bd1e2c] px-2.5 py-0.5 text-[10px] font-bold">
-                                {u.resources.length} {u.resources.length === 1 ? 'PDF' : 'PDFs'}
+                                {u.resources.length}
                               </span>
                             )}
-                            <Link
-                              href={u.path}
-                              className="inline-flex items-center gap-1 text-xs font-semibold text-[#662c91] hover:underline"
-                            >
-                              <span>View Unit</span>
-                              <ArrowUpRight className="h-3 w-3" />
-                            </Link>
                           </div>
                         </div>
                       </li>
@@ -253,59 +190,134 @@ export function CourseView({
         )}
       </section>
 
-      {/* Internal Linking: Same course at other levels */}
-      {sameCourseOtherLevels.length > 0 && (
-        <section className="rounded-3xl border border-[#ebe7f0] bg-[#f8f5fd] p-6">
-          <div className="flex items-center gap-2 mb-4">
-            <Layers className="h-5 w-5 text-[#662c91]" />
-            <h2 className="text-base font-bold text-[#1d1823]">
-              Same Course at Other Qualification Levels
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
-            {sameCourseOtherLevels.map((other) => (
-              <Link
-                key={other.id}
-                href={other.path}
-                className="flex items-center justify-between rounded-xl border border-[#ebe7f0] bg-white p-3.5 text-xs font-semibold text-[#1d1823] hover:border-[#662c91] hover:text-[#662c91] transition-all"
-              >
-                <span>{toTitleCase(other.name)}</span>
-                {other.level && (
-                  <span className="rounded-full bg-[#f4eff9] text-[#662c91] px-2.5 py-0.5 text-[10px] font-bold">
-                    Level {other.level}
-                  </span>
-                )}
-              </Link>
-            ))}
-          </div>
-        </section>
-      )}
+      {/* 3. Related Qualifications & Editorial Revision Guides */}
+      {(contextualArticles.freshEditorialFeed.length > 0 ||
+        sameCourseOtherLevels.length > 0 ||
+        otherSameLevelInDept.length > 0) && (
+        <article className="bg-white rounded-3xl border border-[#ebe7f0] shadow-sm p-6 sm:p-10 lg:p-12">
+          <div className="text-[#1d1823] text-base leading-relaxed space-y-6">
+            <section id="related-courses-and-guides">
+              <h2 className="mt-2 mb-4 text-xl sm:text-2xl font-bold tracking-tight text-[#1d1823] scroll-mt-28">
+                Related Qualifications &amp; Latest {deptTitle} Revision Guides
+              </h2>
 
-      {/* Internal Linking: Other Level X courses in this department */}
-      {otherSameLevelInDept.length > 0 && (
-        <section className="rounded-3xl border border-[#ebe7f0] bg-white p-6">
-          <div className="flex items-center gap-2 mb-4">
-            <BookOpen className="h-5 w-5 text-[#662c91]" />
-            <h2 className="text-base font-bold text-[#1d1823]">
-              Other {course.level ? `Level ${course.level} ` : ''}Courses in {deptTitle}
-            </h2>
-          </div>
-          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5">
-            {otherSameLevelInDept.map((other) => (
-              <li key={other.id}>
-                <Link
-                  href={other.path}
-                  className="block rounded-xl border border-[#ebe7f0] bg-[#f8f5fd] p-3 text-xs font-medium text-[#1d1823] hover:border-[#662c91] hover:text-[#662c91] transition-all"
-                >
-                  {toTitleCase(other.name)}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
+              {contextualArticles.freshEditorialFeed.length > 0 && (
+                <div className="mb-8">
+                  <h3 className="mt-5 mb-3 text-lg font-bold text-[#1d1823]">
+                    Latest Revision Guides &amp; Circulars for {deptTitle}
+                  </h3>
+                  <p className="my-3 text-[15px] sm:text-base leading-relaxed text-[#5c5766]">
+                    Our editorial team regularly updates revision roadmaps, exam verification guides, and curriculum analyses for trainees in the {deptTitle}:
+                  </p>
+                  <div className="space-y-4 mt-4">
+                    {contextualArticles.freshEditorialFeed.map((art) => (
+                      <div key={art.id} className="pl-3 border-l-2 border-[#ebe7f0]">
+                        <h4 className="text-base font-bold text-[#1d1823]">
+                          <Link
+                            href={art.path}
+                            className="text-[#662c91] underline hover:text-[#4b1f6f]"
+                          >
+                            {art.title}
+                          </Link>
+                        </h4>
+                        <p className="mt-1 text-sm sm:text-[15px] text-[#5c5766] leading-relaxed">
+                          {art.excerpt}{' '}
+                          <span className="text-xs text-[#8b8794]">
+                            ({art.reading_time_minutes} min read • Updated{' '}
+                            {formatDate(art.updated_at || art.published_at || '')})
+                          </span>
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
 
-      <FAQSection faqs={faqs} heading={`Frequently Asked Questions About ${courseTitle}`} />
+              {sameCourseOtherLevels.length > 0 && (
+                <div className="mb-8">
+                  <h3 className="mt-6 mb-3 text-lg font-bold text-[#1d1823]">
+                    Same Course at Other Qualification Levels
+                  </h3>
+                  <p className="my-3 text-[15px] sm:text-base leading-relaxed text-[#5c5766]">
+                    Trainees interested in vertical progression or alternative entry tiers for <strong className="font-semibold text-[#1d1823]">{courseTitle}</strong> can explore the corresponding qualifications across other KNQF levels:
+                  </p>
+                  <ul className="my-3 space-y-2 pl-2">
+                    {sameCourseOtherLevels.map((other) => {
+                      const otherIsKnec = other.programme.slug.includes('knec');
+                      return (
+                        <li
+                          key={other.id}
+                          className="flex items-start gap-2.5 text-[15px] sm:text-base text-[#5c5766] leading-relaxed"
+                        >
+                          <span className="text-[#662c91] font-bold mt-0.5">•</span>
+                          <div>
+                            <Link
+                              href={other.path}
+                              className="font-semibold text-[#662c91] underline hover:text-[#4b1f6f]"
+                            >
+                              {toTitleCase(other.name)}
+                            </Link>{' '}
+                            -{' '}
+                            {other.level
+                              ? otherIsKnec
+                                ? `KNEC ${getKnecTierName(other.level)}`
+                                : `KNQF Level ${other.level}`
+                              : 'TVET Qualification'}{' '}
+                            ({other.modules.length} {other.modules.length === 1 ? 'module' : 'modules'}, {other.units.length} units)
+                          </div>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+              )}
+
+              {otherSameLevelInDept.length > 0 && (
+                <div>
+                  <h3 className="mt-6 mb-3 text-lg font-bold text-[#1d1823]">
+                    Other{' '}
+                    {isKnec
+                      ? `KNEC ${getKnecTierName(course.level)} `
+                      : course.level
+                      ? `Level ${course.level} `
+                      : ''}
+                    Courses in {deptTitle}
+                  </h3>
+                  <p className="my-3 text-[15px] sm:text-base leading-relaxed text-[#5c5766]">
+                    Explore related accredited courses at the same qualification level within the{' '}
+                    <Link
+                      href={`/${course.programme.slug}/${course.department.slug}/`}
+                      className="font-semibold text-[#662c91] underline hover:text-[#4b1f6f]"
+                    >
+                      {deptTitle}
+                    </Link>
+                    :
+                  </p>
+                  <ul className="my-3 space-y-2 pl-2">
+                    {otherSameLevelInDept.map((other) => (
+                      <li
+                        key={other.id}
+                        className="flex items-start gap-2.5 text-[15px] sm:text-base text-[#5c5766] leading-relaxed"
+                      >
+                        <span className="text-[#662c91] font-bold mt-0.5">•</span>
+                        <div>
+                          <Link
+                            href={other.path}
+                            className="font-semibold text-[#662c91] underline hover:text-[#4b1f6f]"
+                          >
+                            {toTitleCase(other.name)}
+                          </Link>{' '}
+                          - {other.modules.length} {other.modules.length === 1 ? 'module' : 'modules'}, {other.units.length} competency units
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </section>
+          </div>
+        </article>
+      )}
     </div>
   );
 }

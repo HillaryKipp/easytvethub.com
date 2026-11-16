@@ -17,6 +17,11 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     description:
       'Download free Kenyan TVET past papers, CDACC assessor guides, candidate tools, cutting lists, and KNEC examination papers across Levels 3, 4, 5, and 6.',
+    icons: {
+      icon: '/logo.jpg',
+      shortcut: '/logo.jpg',
+      apple: '/logo.jpg',
+    },
     alternates: {
       canonical: `${siteUrl}/`,
     },

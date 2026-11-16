@@ -1,21 +1,20 @@
 import Link from 'next/link';
-import { GraduationCap, ShieldCheck, Heart } from 'lucide-react';
+import { ShieldCheck } from 'lucide-react';
 import { DirectoryData } from '@/lib/types';
-import { toTitleCase } from '@/lib/utils';
 
-export function Footer({ data }: { data: DirectoryData }) {
-  const progById = new Map(data.programmes.map((p) => [p.id, p]));
-
+export function Footer(_props: { data?: DirectoryData }) {
   return (
     <footer className="mt-20 border-t border-[#311a4e] bg-[#1f0f33] text-[#d9d3e2]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {/* Column 1: Brand & Mission */}
           <div>
             <Link href="/" className="flex items-center gap-2.5 text-white mb-4">
-              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#662c91] text-white">
-                <GraduationCap className="h-5 w-5" />
-              </div>
+              <img
+                src="/logo.jpg"
+                alt="EasyTVET Hub"
+                className="h-10 w-10 rounded-xl object-contain bg-white p-0.5"
+              />
               <div className="flex items-center leading-none">
                 <span className="text-xl font-black tracking-tight text-white">EASY</span>
                 <span className="text-xl font-black tracking-tight text-purple-300">TVET</span>
@@ -33,111 +32,49 @@ export function Footer({ data }: { data: DirectoryData }) {
             </div>
           </div>
 
-          {/* Column 2: All Programmes */}
+          {/* Column 2: Important Links */}
           <div>
             <h2 className="text-xs font-bold uppercase tracking-wider text-white mb-4">
-              TVET Examination Programmes
+              Important Links
             </h2>
             <ul className="space-y-2.5 text-sm">
-              {data.programmes.length > 0 ? (
-                data.programmes.map((prog) => (
-                  <li key={prog.id}>
-                    <Link
-                      href={`/${prog.slug}/`}
-                      className="text-[#d9d3e2] hover:text-white transition-colors"
-                    >
-                      {prog.name}
-                    </Link>
-                  </li>
-                ))
-              ) : (
-                <>
-                  <li>
-                    <span className="text-[#8b8794]">Modular CDACC Courses (Cycle 3)</span>
-                  </li>
-                  <li>
-                    <span className="text-[#8b8794]">CDACC Courses (Cycle 1 &amp; 2)</span>
-                  </li>
-                  <li>
-                    <span className="text-[#8b8794]">KNEC Courses</span>
-                  </li>
-                </>
-              )}
-            </ul>
-
-            <h2 className="text-xs font-bold uppercase tracking-wider text-white mt-8 mb-3">
-              Qualification Levels
-            </h2>
-            <ul className="grid grid-cols-2 gap-2 text-sm">
-              {data.levels.map((lvl) => (
-                <li key={lvl}>
-                  <Link
-                    href={`/levels/level-${lvl}/`}
-                    className="inline-flex items-center text-[#d9d3e2] hover:text-white transition-colors"
-                  >
-                    Level {lvl} Courses
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <Link href="/about/" className="text-[#d9d3e2] hover:text-white transition-colors">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact/" className="text-[#d9d3e2] hover:text-white transition-colors">
+                  Contact Us
+                </Link>
+              </li>
+              <li>
+                <Link href="/privacy/" className="text-[#d9d3e2] hover:text-white transition-colors">
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link href="/terms/" className="text-[#d9d3e2] hover:text-white transition-colors">
+                  Terms and Conditions
+                </Link>
+              </li>
             </ul>
           </div>
 
-          {/* Column 3: All Departments */}
+          {/* Column 3: Latest Publications & Resources */}
           <div>
             <h2 className="text-xs font-bold uppercase tracking-wider text-white mb-4">
-              Academic Departments
-            </h2>
-            {data.departments.length > 0 ? (
-              <ul className="space-y-2.5 text-sm max-h-64 overflow-y-auto pr-2">
-                {data.departments.map((dept) => {
-                  const prog = progById.get(dept.programme_id);
-                  if (!prog) return null;
-                  return (
-                    <li key={dept.id}>
-                      <Link
-                        href={`/${prog.slug}/${dept.slug}/`}
-                        className="text-[#d9d3e2] hover:text-white transition-colors block truncate"
-                      >
-                        {toTitleCase(dept.name)}
-                      </Link>
-                    </li>
-                  );
-                })}
-              </ul>
-            ) : (
-              <p className="text-sm text-[#8b8794]">Departments will appear once loaded.</p>
-            )}
-          </div>
-
-          {/* Column 4: Resources & Links */}
-          <div>
-            <h2 className="text-xs font-bold uppercase tracking-wider text-white mb-4">
-              Resources &amp; Information
+              Publications &amp; Resources
             </h2>
             <ul className="space-y-2.5 text-sm">
               <li>
                 <Link href="/blog/" className="text-[#d9d3e2] hover:text-white transition-colors">
-                  TVET News, Circulars &amp; Guides
+                  Latest Publications &amp; Blog
                 </Link>
               </li>
               <li>
                 <Link href="/search/" className="text-[#d9d3e2] hover:text-white transition-colors">
                   Instant Directory Search
-                </Link>
-              </li>
-              <li>
-                <Link href="/about/" className="text-[#d9d3e2] hover:text-white transition-colors">
-                  About EasyTVET
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact/" className="text-[#d9d3e2] hover:text-white transition-colors">
-                  Contact Editorial Board
-                </Link>
-              </li>
-              <li>
-                <Link href="/privacy/" className="text-[#d9d3e2] hover:text-white transition-colors">
-                  Privacy Policy &amp; Data Rights
                 </Link>
               </li>
             </ul>

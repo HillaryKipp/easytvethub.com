@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Search, Home, Layers } from 'lucide-react';
+import { Search, Home } from 'lucide-react';
 
 export default function NotFound() {
   return (
@@ -33,7 +33,6 @@ export default function NotFound() {
           href="/levels/level-6/"
           className="inline-flex items-center gap-2 rounded-xl border border-[#ebe7f0] bg-white hover:border-[#662c91] hover:text-[#662c91] px-5 py-2.5 text-xs font-bold text-[#1d1823] transition-colors"
         >
-          <Layers className="h-4 w-4 text-[#662c91]" />
           Level 6 Diploma Hub
         </Link>
       </div>

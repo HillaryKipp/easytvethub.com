@@ -86,18 +86,19 @@ export async function generateMetadata({
 }: {
   params: Promise<{ slug?: string[] }>;
 }): Promise<Metadata> {
-  const { slug = [] } = await params;
+  const { slug: rawSlug = [] } = await params;
+  const slug = rawSlug.filter(Boolean);
   const { siteUrl } = getEnvConfig();
   const data = await getDirectoryData();
 
   if (slug.length === 0) {
     return {
-      title: 'TVET Papers Kenya - CDACC & KNEC Past Papers, Assessor Guides & Candidate Tools',
+      title: 'TVET Papers Kenya - CDACC & KNEC Past Papers, Assessor Guides & Candidate Tools | EasyTVET',
       description:
         'Download free Kenyan TVET past papers, CDACC assessor guides, candidate tools, cutting lists, and KNEC examination papers across Levels 3, 4, 5, and 6.',
       alternates: { canonical: `${siteUrl}/` },
       openGraph: {
-        title: 'TVET Papers Kenya - CDACC & KNEC Past Papers, Assessor Guides & Candidate Tools',
+        title: 'TVET Papers Kenya - CDACC & KNEC Past Papers, Assessor Guides & Candidate Tools | EasyTVET',
         description:
           'Download free Kenyan TVET past papers, CDACC assessor guides, candidate tools, cutting lists, and KNEC examination papers across Levels 3, 4, 5, and 6.',
         url: `${siteUrl}/`,
@@ -105,7 +106,7 @@ export async function generateMetadata({
       },
       twitter: {
         card: 'summary_large_image',
-        title: 'TVET Papers Kenya - CDACC & KNEC Past Papers, Assessor Guides & Candidate Tools',
+        title: 'TVET Papers Kenya - CDACC & KNEC Past Papers, Assessor Guides & Candidate Tools | EasyTVET',
         description:
           'Download free Kenyan TVET past papers, CDACC assessor guides, candidate tools, cutting lists, and KNEC examination papers.',
         images: ['/og-default.png'],
@@ -119,10 +120,16 @@ export async function generateMetadata({
     if (!prog) return {};
     const progDepts = data.departments.filter((d) => d.programme_id === prog.id);
     const progCourses = data.courses.filter((c) => c.programme.id === prog.id);
-    const title = prog.seo_title?.trim() || `${prog.name} - Departments, Courses & Past Papers | TVET Papers Kenya`;
+    const totalUnits = progCourses.reduce((sum, c) => sum + c.units.length, 0);
+    const title =
+      prog.seo_title?.trim() ||
+      `${prog.name} - ${progDepts.length} Departments, ${progCourses.length} Courses & Past Papers | EasyTVET`;
     const desc =
       prog.seo_description?.trim() ||
-      truncateDescription(getProgrammeIntro(prog, progDepts, progCourses), 160);
+      truncateDescription(
+        `${prog.name} in Kenya: Browse ${progCourses.length} accredited courses and ${totalUnits} competency units across ${progDepts.length} departments. Download free past papers & guides.`,
+        160
+      );
     const ogImg = resolveOgImage(prog.og_image_url);
     const url = `${siteUrl}/${prog.slug}/`;
 
@@ -147,13 +154,17 @@ export async function generateMetadata({
     const dept = data.departments.find((d) => d.programme_id === prog.id && d.slug === slug[1]);
     if (!dept) return {};
     const deptCourses = data.courses.filter((c) => c.department_id === dept.id);
+    const deptUnitsCount = deptCourses.reduce((sum, c) => sum + c.units.length, 0);
     const deptTitle = toTitleCase(dept.name);
     const title =
       dept.seo_title?.trim() ||
-      `${deptTitle} Courses & Past Papers (${prog.name}) | TVET Papers Kenya`;
+      `${deptTitle} (${prog.name}) - ${deptCourses.length} Courses, ${deptUnitsCount} Units & Past Papers | EasyTVET`;
     const desc =
       dept.seo_description?.trim() ||
-      truncateDescription(getDepartmentIntro(dept, prog, deptCourses), 160);
+      truncateDescription(
+        `${deptTitle} (${prog.name}): Explore all ${deptCourses.length} accredited TVET courses and ${deptUnitsCount} units in Kenya. Download free past papers, candidate tools & assessor guides.`,
+        160
+      );
     const ogImg = resolveOgImage(dept.og_image_url, prog.og_image_url);
     const url = `${siteUrl}/${prog.slug}/${dept.slug}/`;
 
@@ -182,9 +193,13 @@ export async function generateMetadata({
     if (levelMatch) {
       const lvl = parseInt(levelMatch[1], 10);
       const deptTitle = toTitleCase(dept.name);
-      const title = `Level ${lvl} Courses in ${deptTitle} (${prog.name}) | TVET Papers Kenya`;
+      const lvlCourses = data.courses.filter(
+        (c) => c.department_id === dept.id && c.level === lvl
+      );
+      const lvlUnitsCount = lvlCourses.reduce((sum, c) => sum + c.units.length, 0);
+      const title = `Level ${lvl} Courses in ${deptTitle} (${prog.name}) - ${lvlCourses.length} Courses & Past Papers | EasyTVET`;
       const desc = truncateDescription(
-        `Explore all accredited Level ${lvl} courses in the ${deptTitle} under ${prog.name}. Download modular units, past papers, assessor guides, and candidate tools.`,
+        `Level ${lvl} courses in ${deptTitle} (${prog.name}): Browse all ${lvlCourses.length} accredited courses and ${lvlUnitsCount} units. Download free past papers, assessor guides & tools.`,
         160
       );
       const ogImg = resolveOgImage(dept.og_image_url, prog.og_image_url);
@@ -275,13 +290,16 @@ export default async function CatchAllDirectoryPage({
   params,
 }: {
   params: Promise<{ slug?: string[] }>;
-}) {
-  const { slug = [] } = await params;
-  const data = await getDirectoryData();
+}): Promise<React.ReactElement> {
+  const { slug: rawSlug = [] } = await params;
+  const slug = rawSlug.filter(Boolean);
+  const [data, articles] = await Promise.all([
+    getDirectoryData(),
+    getPublishedArticles(),
+  ]);
 
   if (slug.length === 0) {
-    const articles = await getPublishedArticles();
-    return <HomeView data={data} articles={articles.slice(0, 3)} />;
+    return <HomeView data={data} articles={articles.slice(0, 6)} />;
   }
 
   // 1 segment: /{programme}/
@@ -300,7 +318,7 @@ export default async function CatchAllDirectoryPage({
     const dept = data.departments.find((d) => d.programme_id === prog.id && d.slug === slug[1]);
     if (!dept) notFound();
     const courses = data.courses.filter((c) => c.department_id === dept.id);
-    return <DepartmentView programme={prog} department={dept} courses={courses} />;
+    return <DepartmentView programme={prog} department={dept} courses={courses} articles={articles} />;
   }
 
   // 3 segments: /{programme}/{department}/level-N/ OR /{programme}/{department}/{course}/
@@ -320,6 +338,7 @@ export default async function CatchAllDirectoryPage({
           department={dept}
           courses={deptCourses}
           filterLevel={lvl}
+          articles={articles}
         />
       );
     }
@@ -328,7 +347,7 @@ export default async function CatchAllDirectoryPage({
       (c) => c.department_id === dept.id && c.slug === slug[2]
     );
     if (!course) notFound();
-    return <CourseView course={course} allCourses={data.courses} />;
+    return <CourseView course={course} allCourses={data.courses} articles={articles} />;
   }
 
   // 4 segments: /{programme}/{department}/{course}/{unit}/
@@ -343,7 +362,7 @@ export default async function CatchAllDirectoryPage({
     if (!unit) notFound();
     const course = data.courses.find((c) => c.id === unit.course_id);
     if (!course) notFound();
-    return <UnitView unit={unit} course={course} allUnits={data.units} />;
+    return <UnitView unit={unit} course={course} allUnits={data.units} articles={articles} />;
   }
 
   notFound();

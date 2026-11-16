@@ -922,7 +922,7 @@ export function AdminPanelClient() {
       <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-5 shadow-xs">
         <div>
           <h1 className="text-2xl font-extrabold text-slate-900 dark:text-white">
-            TVET Papers Kenya — Admin Panel
+            TVET Papers Kenya - Admin Panel
           </h1>
           <p className="text-xs text-slate-500 mt-0.5">
             Authenticated as {sessionUser.email} • Manage hierarchy, SEO, FAQs, resources &amp; CSV imports

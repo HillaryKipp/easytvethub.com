@@ -380,7 +380,7 @@ export function AdminArticlesTab({ onStatusMsg }: AdminArticlesTabProps) {
                 >
                   {authors.map((a) => (
                     <option key={a.id} value={a.id}>
-                      {a.name} — {a.role_title}
+                      {a.name} - {a.role_title}
                     </option>
                   ))}
                 </select>

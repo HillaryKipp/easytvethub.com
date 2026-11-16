@@ -4,7 +4,7 @@ import { useState, useEffect, useRef, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import MiniSearch from 'minisearch';
-import { Search, BookOpen, FileText, Filter } from 'lucide-react';
+import { Search } from 'lucide-react';
 import { SearchDocument } from '@/lib/types';
 
 function SearchClientInner() {
@@ -95,8 +95,8 @@ function SearchClientInner() {
 
         <div className="flex flex-wrap items-center justify-between gap-4 text-xs">
           <div className="flex flex-wrap items-center gap-1.5">
-            <span className="inline-flex items-center gap-1 font-semibold text-[#8b8794] mr-1">
-              <Filter className="h-3.5 w-3.5" /> Type:
+            <span className="font-semibold text-[#8b8794] mr-1">
+              Type:
             </span>
             {(['all', 'course', 'unit'] as const).map((t) => (
               <button
@@ -157,36 +157,27 @@ function SearchClientInner() {
                   href={item.path}
                   className="group flex items-start justify-between gap-4 hover:bg-[#f8f5fd] -mx-3 px-3 py-2 rounded-2xl transition-colors"
                 >
-                  <div className="flex items-start gap-3">
-                    <span className="mt-0.5 rounded-xl bg-[#f4eff9] p-2 text-[#662c91] shrink-0">
-                      {item.type === 'course' ? (
-                        <BookOpen className="h-4 w-4" />
-                      ) : (
-                        <FileText className="h-4 w-4" />
+                  <div>
+                    <div className="flex flex-wrap items-center gap-2">
+                      <span className="font-bold text-sm text-[#1d1823] group-hover:text-[#662c91]">
+                        {item.name}
+                      </span>
+                      <span className="rounded-full bg-[#f4eff9] text-[#662c91] px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider">
+                        {item.type}
+                      </span>
+                      {item.level && (
+                        <span className="rounded-full bg-[#fbeced] text-[#bd1e2c] px-2 py-0.5 text-[10px] font-bold">
+                          Level {item.level}
+                        </span>
                       )}
-                    </span>
-                    <div>
-                      <div className="flex flex-wrap items-center gap-2">
-                        <span className="font-bold text-sm text-[#1d1823] group-hover:text-[#662c91]">
-                          {item.name}
-                        </span>
-                        <span className="rounded-full bg-[#f4eff9] text-[#662c91] px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider">
-                          {item.type}
-                        </span>
-                        {item.level && (
-                          <span className="rounded-full bg-[#fbeced] text-[#bd1e2c] px-2 py-0.5 text-[10px] font-bold">
-                            Level {item.level}
-                          </span>
-                        )}
-                      </div>
-                      <p className="text-xs text-[#8b8794] mt-0.5">
-                        {item.breadcrumb}
-                      </p>
                     </div>
+                    <p className="text-xs text-[#8b8794] mt-0.5">
+                      {item.breadcrumb}
+                    </p>
                   </div>
                   {item.resourceCount ? (
                     <span className="shrink-0 rounded-full bg-[#f4eff9] text-[#662c91] px-3 py-1 text-xs font-bold">
-                      {item.resourceCount} PDF{item.resourceCount === 1 ? '' : 's'}
+                      {item.resourceCount}
                     </span>
                   ) : null}
                 </Link>

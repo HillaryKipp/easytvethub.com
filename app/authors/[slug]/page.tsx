@@ -39,11 +39,11 @@ export async function generateMetadata({
   const fullUrl = `${siteUrl}/authors/${author.slug}/`;
 
   return {
-    title: `${author.name} — ${author.role_title} | EasyTVET`,
+    title: `${author.name} - ${author.role_title} | EasyTVET`,
     description: author.bio,
     alternates: { canonical: fullUrl },
     openGraph: {
-      title: `${author.name} — TVET Author & Curriculum Reviewer`,
+      title: `${author.name} - TVET Author & Curriculum Reviewer`,
       description: author.bio,
       url: fullUrl,
       type: 'profile',

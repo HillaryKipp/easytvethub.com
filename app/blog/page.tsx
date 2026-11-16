@@ -6,7 +6,6 @@ import {
   Clock,
   ShieldCheck,
   ArrowRight,
-  Sparkles,
   Zap,
 } from 'lucide-react';
 import { getPublishedArticles } from '@/lib/blog-data';
@@ -84,7 +83,6 @@ export default async function BlogIndexPage() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-8 mb-8 border-b border-[#ebe7f0]">
           <div>
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#f4eff9] text-[#662c91] border border-purple-200 mb-3">
-              <Sparkles className="h-3.5 w-3.5" />
               Verified TVET Editorial &amp; News Desk
             </div>
             <h1 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-[#1d1823]">

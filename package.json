@@ -11,8 +11,12 @@
     "lint": "next lint",
     "seed": "tsx scripts/seed.ts",
     "seed:cdacc": "tsx scripts/generate-cdacc-seeds.ts",
+    "seed:modular-resources": "tsx scripts/generate-modular-resources-seed.ts",
     "seed:knec": "tsx scripts/generate-knec-seeds.ts",
-    "seed:nonmodular": "tsx scripts/generate-nonmodular-seeds.ts"
+    "seed:knec-resources": "tsx scripts/generate-knec-resources-seed.ts",
+    "seed:nonmodular": "tsx scripts/generate-nonmodular-seeds.ts",
+    "seed:nonmodular-resources": "tsx scripts/generate-nonmodular-resources-seed.ts",
+    "seed:blog": "tsx scripts/generate-blog-seeds.ts"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.49.1",

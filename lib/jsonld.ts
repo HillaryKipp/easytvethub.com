@@ -95,7 +95,7 @@ export function buildCourseSchema(course: EnrichedCourse, description: string) {
     url: fullUrl,
     provider: {
       '@type': 'Organization',
-      name: `${course.programme.name} — ${toTitleCase(course.department.name)}`,
+      name: `${course.programme.name} - ${toTitleCase(course.department.name)}`,
       sameAs: `${siteUrl}/${course.programme.slug}/${course.department.slug}/`,
     },
   };
@@ -118,7 +118,10 @@ export function buildLearningResourceSchema(unit: EnrichedUnit, description: str
     name: unitTitle,
     description,
     url: fullUrl,
-    learningResourceType: 'Assessment & Competency Unit',
+    learningResourceType:
+      unit.programme.slug === 'knec-courses'
+        ? 'KNEC Past Examination Papers'
+        : 'Assessment & Competency Unit',
     educationalLevel: unit.course.level ? `Level ${unit.course.level}` : 'TVET',
     isPartOf: {
       '@type': 'Course',

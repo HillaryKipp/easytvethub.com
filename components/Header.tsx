@@ -4,15 +4,12 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import {
-  GraduationCap,
   Menu,
   X,
   ChevronDown,
   BookOpen,
   FileText,
   Search,
-  Sparkles,
-  ArrowRight,
 } from 'lucide-react';
 import { HeaderSearch } from './HeaderSearch';
 
@@ -26,28 +23,20 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40 w-full border-b border-[#ebe7f0] bg-white/95 backdrop-blur-md shadow-[0_1px_3px_rgba(31,15,51,0.04)]">
       {/* Top micro-bar for direct utility */}
-      <div className="bg-[#4b1f6f] text-white text-[11px] py-1 px-4 hidden sm:block">
-        <div className="mx-auto max-w-7xl flex items-center justify-between font-medium">
-          <div className="flex items-center gap-4">
-            <span>Official TVET CDACC &amp; KNEC Revision Portal</span>
-            <span className="text-white/40">•</span>
-            <span>Free Past Papers, Candidate Tools &amp; Assessor Guides</span>
-          </div>
-          <div className="flex items-center gap-4">
-            <Link href="/about/" className="hover:text-purple-200 transition-colors">
-              About
-            </Link>
-            <Link href="/contact/" className="hover:text-purple-200 transition-colors">
-              Contact
-            </Link>
-            <Link
-              href="/blog/"
-              className="inline-flex items-center gap-1 text-purple-200 hover:text-white transition-colors"
-            >
-              <Sparkles className="h-3 w-3 text-amber-300" />
-              Latest Circulars 2026
-            </Link>
-          </div>
+      <div className="bg-[#4b1f6f] text-white text-[11px] py-1.5 px-4 hidden sm:block">
+        <div className="mx-auto max-w-7xl flex items-center justify-center gap-6 font-medium">
+          <Link href="/about/" className="hover:text-purple-200 transition-colors">
+            About Us
+          </Link>
+          <Link href="/contact/" className="hover:text-purple-200 transition-colors">
+            Contact Us
+          </Link>
+          <Link href="/privacy/" className="hover:text-purple-200 transition-colors">
+            Privacy Policy
+          </Link>
+          <Link href="/terms/" className="hover:text-purple-200 transition-colors">
+            Terms and Conditions
+          </Link>
         </div>
       </div>
 
@@ -57,24 +46,14 @@ export function Header() {
           {/* Brand Logo */}
           <Link
             href="/"
-            className="flex items-center gap-2.5 shrink-0 group focus:outline-none"
+            className="flex items-center shrink-0 group focus:outline-none"
             aria-label="EasyTVET Home"
           >
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-[#662c91] to-[#4b1f6f] text-white shadow-sm group-hover:scale-105 transition-transform">
-              <GraduationCap className="h-5 w-5" aria-hidden="true" />
-            </div>
-            <div>
-              <div className="flex items-center leading-none">
-                <span className="text-xl font-black tracking-tight text-[#662c91]">EASY</span>
-                <span className="text-xl font-black tracking-tight text-[#1d1823]">TVET</span>
-                <span className="ml-1 text-[10px] font-bold uppercase tracking-wider bg-[#bd1e2c] text-white px-1.5 py-0.5 rounded-full">
-                  HUB
-                </span>
-              </div>
-              <span className="text-[10px] font-medium text-[#8b8794] block mt-0.5 tracking-tight">
-                Past Papers &amp; Curriculum
-              </span>
-            </div>
+            <img
+              src="/logo.jpg"
+              alt="EasyTVET Hub"
+              className="h-12 w-auto object-contain group-hover:scale-105 transition-transform"
+            />
           </Link>
 
           {/* Search Bar - Center */}
@@ -85,7 +64,7 @@ export function Header() {
           {/* Desktop Nav Links */}
           <nav
             aria-label="Primary navigation"
-            className="hidden lg:flex items-center gap-6 text-[13px] font-medium text-[#5c5766]"
+            className="hidden lg:flex items-center gap-6 text-[13px] font-medium text-[#5c5766] uppercase tracking-wide"
           >
             <Link
               href="/"
@@ -132,7 +111,7 @@ export function Header() {
               >
                 Levels <ChevronDown className="h-3.5 w-3.5 text-[#8b8794] group-hover:text-[#662c91]" />
               </button>
-              <div className="absolute top-full left-0 mt-2 hidden group-hover:block w-48 rounded-xl bg-white border border-[#ebe7f0] shadow-lg p-2 z-50">
+              <div className="absolute top-full left-0 mt-2 hidden group-hover:block w-48 rounded-xl bg-white border border-[#ebe7f0] shadow-lg p-2 z-50 normal-case tracking-normal">
                 <Link
                   href="/levels/level-6/"
                   className="flex items-center justify-between px-3 py-2 text-xs font-medium text-[#1d1823] hover:bg-[#f4eff9] hover:text-[#662c91] rounded-lg"
@@ -173,25 +152,16 @@ export function Header() {
                   : ''
               }`}
             >
-              Free Resources &amp; Blog
+              Blog
             </Link>
           </nav>
 
-          {/* Right Action Button - Dama Crimson / Red Accent */}
-          <div className="flex items-center gap-2.5">
-            <Link
-              href="/search/"
-              className="hidden sm:inline-flex items-center gap-1.5 rounded-full bg-[#bd1e2c] hover:bg-[#9c1824] px-4 py-2 text-xs font-semibold text-white shadow-xs transition-colors"
-            >
-              <span>Past Papers</span>
-              <ArrowRight className="h-3.5 w-3.5" />
-            </Link>
-
-            {/* Mobile menu trigger */}
+          {/* Mobile menu trigger */}
+          <div className="flex items-center gap-2.5 lg:hidden">
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 rounded-xl text-[#5c5766] hover:text-[#662c91] hover:bg-[#f4eff9] transition-colors"
+              className="p-2 rounded-xl text-[#5c5766] hover:text-[#662c91] hover:bg-[#f4eff9] transition-colors"
               aria-label="Toggle navigation menu"
             >
               {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -273,7 +243,7 @@ export function Header() {
               onClick={() => setMobileMenuOpen(false)}
               className="px-3 py-2 rounded-lg bg-[#f4eff9] text-[#662c91] font-semibold"
             >
-              Free Resources, Circulars &amp; Blog
+              Blog
             </Link>
             <Link
               href="/about/"
