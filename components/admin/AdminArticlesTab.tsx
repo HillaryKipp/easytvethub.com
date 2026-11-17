@@ -32,6 +32,21 @@ const CATEGORIES: { value: ArticleCategory; label: string }[] = [
   { value: 'course_spotlight', label: 'Course Spotlight' },
 ];
 
+function formatSupabaseError(err: unknown): string {
+  if (err instanceof Error) return err.message;
+  if (err && typeof err === 'object') {
+    const e = err as { message?: string; details?: string; hint?: string };
+    const parts = [e.message, e.details, e.hint].filter(Boolean);
+    if (parts.length > 0) return parts.join(' — ');
+    try {
+      return JSON.stringify(err);
+    } catch {
+      return String(err);
+    }
+  }
+  return String(err);
+}
+
 export function AdminArticlesTab({ onStatusMsg }: AdminArticlesTabProps) {
   const supabase = getSupabaseClient();
   const [articles, setArticles] = useState<Article[]>([]);
@@ -122,10 +137,14 @@ export function AdminArticlesTab({ onStatusMsg }: AdminArticlesTabProps) {
   }
 
   function handleSelectEdit(art: Article) {
+    const validAuthorId = authors.some((a) => a.id === art.author_id)
+      ? art.author_id
+      : authors[0]?.id || '';
+
     setEditingArticle(art);
     setTitle(art.title);
     setSlug(art.slug);
-    setAuthorId(art.author_id);
+    setAuthorId(validAuthorId);
     setCategory(art.category);
     setExcerpt(art.excerpt);
     setContent(art.content);
@@ -146,10 +165,22 @@ export function AdminArticlesTab({ onStatusMsg }: AdminArticlesTabProps) {
       return;
     }
 
+    const validAuthorId = authors.some((a) => a.id === authorId)
+      ? authorId
+      : authors[0]?.id;
+
+    if (!validAuthorId || validAuthorId.startsWith('author-')) {
+      onStatusMsg({
+        type: 'error',
+        text: 'No valid author found in Supabase. Please create an author in the Authors tab first.',
+      });
+      return;
+    }
+
     const nextPublished = publishOverride !== undefined ? publishOverride : published;
     const finalSlug = slug.trim() || slugify(title);
     const payload = {
-      author_id: authorId || authors[0]?.id,
+      author_id: validAuthorId,
       title: title.trim(),
       slug: finalSlug,
       excerpt: excerpt.trim(),
@@ -188,10 +219,10 @@ export function AdminArticlesTab({ onStatusMsg }: AdminArticlesTabProps) {
       setEditingArticle(null);
       await loadData();
     } catch (err: unknown) {
-      const msg = err instanceof Error ? err.message : String(err);
+      const msg = formatSupabaseError(err);
       onStatusMsg({
         type: 'error',
-        text: `Error saving article: ${msg} (Note: ensure articles table exists in Supabase).`,
+        text: `Error saving article: ${msg}`,
       });
     }
   }
@@ -204,7 +235,7 @@ export function AdminArticlesTab({ onStatusMsg }: AdminArticlesTabProps) {
       onStatusMsg({ type: 'success', text: `Deleted article "${art.title}".` });
       await loadData();
     } catch (err: unknown) {
-      const msg = err instanceof Error ? err.message : String(err);
+      const msg = formatSupabaseError(err);
       onStatusMsg({ type: 'error', text: `Failed to delete article: ${msg}` });
     }
   }
