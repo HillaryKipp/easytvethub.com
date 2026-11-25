@@ -40,7 +40,7 @@ export default function AboutPage() {
     {
       question: 'Who authors and reviews the revision guides and course spotlights?',
       answer:
-        'All articles, curriculum breakdowns, and assessment guides on EasyTVET are authored and peer-reviewed by experienced Kenyan TVET educators, curriculum specialists, and accredited technical assessors led by Hillary Kipkorir and the EasyTVET Editorial Board.',
+        'All articles, curriculum breakdowns, and assessment guides on EasyTVET are authored and peer-reviewed by experienced Kenyan TVET educators, curriculum specialists, and accredited technical assessors and the EasyTVET Editorial Board.',
     },
     {
       question: 'Is EasyTVET affiliated with TVET-CDACC or KNEC?',
